@@ -20,3 +20,15 @@ $~*
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+
+
+### vagrant
+## for linux command line education
+
+# General
+.vagrant/
+
+# Log files (if you are creating logs in debug mode, uncomment this)
+# *.log
+
+
