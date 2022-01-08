@@ -1,7 +1,7 @@
 import edu.duke.*;
 
 /**
- * part1:
+ * debug1:
  * find abc from string
  * 
  * @author (あなたの名前)
