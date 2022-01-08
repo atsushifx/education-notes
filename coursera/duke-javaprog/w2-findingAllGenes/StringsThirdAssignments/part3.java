@@ -44,19 +44,19 @@ public class part3
         int stopIndex = -1;
         int idx;
         
-        idx = findStopCodon(dna, startIndex, "taa");
+        idx = findStopCodon(dna, startIndex, "TAA");
         if (idx != -1) {
             if ((stopIndex==-1)||(stopIndex > idx)) {
                 stopIndex = idx;
             }
         }
-        idx = findStopCodon(dna, startIndex, "tag");
+        idx = findStopCodon(dna, startIndex, "TAG");
         if (idx != -1) {
             if ((stopIndex==-1)||(stopIndex > idx)) {
                 stopIndex = idx;
             }
         }
-        idx = findStopCodon(dna, startIndex, "tga");
+        idx = findStopCodon(dna, startIndex, "TGA");
         if (idx != -1) {
             if ((stopIndex==-1)||(stopIndex > idx)) {
                 stopIndex = idx;
@@ -73,7 +73,7 @@ public class part3
      */
     String findGene(String dna, int searchPos)
     {
-        int startIndex = dna.indexOf("atg", searchPos);
+        int startIndex = dna.indexOf("ATG", searchPos);
         
         if (startIndex == -1) {
             return "";
@@ -95,14 +95,15 @@ public class part3
     {
         StorageResource genesList = new StorageResource();
         
-        String buff = dna;
+        String buff = dna.toUpperCase();
         int index = 0;
         while (true) {
             String gene = findGene(buff, index);
             
             if (gene.isEmpty())  break;
+            
             genesList.add(gene);
-            index += gene.length();
+            index = buff.indexOf(gene, index) + gene.length();
         }
         return genesList;
     }
@@ -121,7 +122,7 @@ public class part3
         // count c,g
         for (i=0; i<size; i++) {
             char c = gene.charAt(i);
-            if (c=='c'||c=='g') {
+            if (c=='C'||c=='G') {
                 count++;
             }
         }
@@ -137,7 +138,8 @@ public class part3
         int count = 0;
         int pos = 0;
         
-        while ((pos = dna.indexOf("ctg", pos)) != -1) {
+        dna = dna.toUpperCase();
+        while ((pos = dna.indexOf("CTG", pos)) != -1) {
             count++;
             pos += 3;
         }
@@ -145,45 +147,84 @@ public class part3
     }
 
     /**
+     * 
+     */
+    private int countGene(StorageResource genesList, int len)
+    {
+        int count = 0;
+        
+        for (String gene : genesList.data()) {
+            int l = gene.length();
+            if (l >= len) {
+                count++;
+            }
+        }
+        return count;        
+    }
+   
+    /**
+     * 
+     */
+    private int countGeneRatio(StorageResource genesList, double ratio)
+    {
+        int count = 0;
+        
+        for (String gene : genesList.data()) {
+            double r = cgRatio(gene);
+           
+            if (r >= ratio) {
+                count++;
+            }
+        }
+        return count;        
+    }
+    /**
+     * 
+     */
+    private String getLongestGene(StorageResource genesList)
+    {
+        String longestGene = "";
+        int maxLength = -1;
+        
+        for (String gene : genesList.data()) {
+            int l = gene.length();
+            
+            if (l > maxLength) {
+                maxLength = l;
+                longestGene = gene;
+            }
+        }
+        return longestGene;
+    }
+    
+    /**
      * processGenes
      *   get gene from storage,
      *     then print all gene;
      */
-    void processGenes(StorageResource sr)
+    void processGenes(StorageResource geneList)
     {
-        // length >= 9
-        System.out.println("gene in length >= 9");
-        int n1 = 0;
-        for (String g : sr.data()) {
-            if (g.length() >= 9) {
-                n1++;
-                System.out.println(g);
-            }
+        System.out.println("all gene");
+        int n = 0;
+        for (String gene : geneList.data()) {
+            n++;
+            System.out.println("["+n+"] "+gene);
         }
+        
+        // length >= 9
+        System.out.println("gene in length > 9");
+        int n1 = countGene(geneList, 9);
         System.out.println(n1);
         
+        // ratio
         System.out.println("gene in cgRatio > 0.35");
-        int n2 = 0;
-        for (String g : sr.data()) {
-            double r = cgRatio(g);
-            if (r>0.35d) {
-                n2++;
-                System.out.println(g);
-            }
-        }
+        int n2 = countGeneRatio(geneList, 0.35);
         System.out.println(n2);
         
         System.out.println("longest gene");
-        int mlen = -1;
-        String gene = "";
-        for (String g : sr.data()) {
-            if (g.length() > mlen) {
-                gene = g;
-                mlen = gene.length();
-            }
-        }
+        String gene = getLongestGene(geneList);
         System.out.println(gene);
-        System.out.println(mlen);
+        System.out.println(gene.length());
     }
     
     /**
@@ -202,7 +243,7 @@ public class part3
         geneList = getAllGenes(dna);
         processGenes(geneList);
         
-        dna = "taatgttttagcc"; // length 9
+        dna = "taatgtttaggtagcc"; // length 12
         geneList = getAllGenes(dna);
         processGenes(geneList);
         
@@ -223,41 +264,25 @@ public class part3
     /**
      * 
      */
-    void processGenes2(StorageResource sr)
+    void processGenes2(StorageResource geneList)
     {
         // length >= 9
+        System.out.println("All gene");
+        System.out.println(countGene(geneList, 0));
+        
         System.out.println("gene in length >= 60");
-        int n1 = 0;
-        for (String g : sr.data()) {
-            if (g.length() >= 60) {
-                n1++;
-                System.out.println(g);
-            }
-        }
+        int n1 = countGene(geneList, 60);
         System.out.println(n1);
         
         System.out.println("gene in cgRatio > 0.35");
-        int n2 = 0;
-        for (String g : sr.data()) {
-            double r = cgRatio(g);
-            if (r>0.35d) {
-                n2++;
-                System.out.println(g);
-            }
-        }
+        int n2 = countGeneRatio(geneList, 0.35);
         System.out.println(n2);
         
         System.out.println("longest gene");
-        int mlen = -1;
-        String gene = "";
-        for (String g : sr.data()) {
-            if (g.length() > mlen) {
-                gene = g;
-                mlen = gene.length();
-            }
-        }
+        String gene = getLongestGene(geneList);
+        
         System.out.println(gene);
-        System.out.println(mlen);
+        System.out.println(gene.length());
     }
     
     /**
@@ -269,8 +294,10 @@ public class part3
     {
          FileResource fr = new FileResource("brca1line.fa");
          String dna = fr.asString();
-         StorageResource genes = getAllGenes(dna);
+         StorageResource geneList = getAllGenes(dna);
+    
+         int n = 0;
          
-         processGenes2(genes);
+         processGenes2(geneList);
     }
 }

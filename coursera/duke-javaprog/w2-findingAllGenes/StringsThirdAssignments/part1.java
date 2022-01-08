@@ -91,14 +91,14 @@ public class part1
     {
         StorageResource genesList = new StorageResource();
         
-        String buff = dna;
+        String buff = dna.toUpperCase();
         int index = 0;
         while (true) {
             String gene = findGene(buff, index);
             
             if (gene.isEmpty())  break;
             genesList.add(gene);
-            index += gene.length();
+            index = buff.indexOf(gene, index) + gene.length();
         }
         return genesList;
     }
