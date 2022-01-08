@@ -78,5 +78,7 @@ public class part2 {
         dna = "AGATGCAGTTAAAGT"; // invalid gene
         gene = findSimpleGene(dna, startCodon, endCodon);
         System.out.println("dna:" + dna + "\t found:" + gene);
+        
+        
     }
 }
