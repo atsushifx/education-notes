@@ -1,0 +1,30 @@
+{
+  "filters": {
+    "allowlist": {
+      "allowlistConfigPaths": []
+    }
+  },
+  "rules": { // for wriing English
+    "ginger": {
+      "skipPatterns": []
+    },
+    "write-good": {
+      "passive": false,
+      "thereIs": false
+    },
+    "common-misspellings": {},
+    "spelling": {
+      "lamnguage": "en",
+      "skipPatterns": [
+        "Atsushi",
+        "Furukawa",
+        "OSS"
+      ],
+      "suggestCorrections": true,
+    },
+    "@proofdict/proofdict": {
+      "dictURL": "https://atsushifx.github.io/proof-dictionary/"
+    },
+    "@textlint-rule/no-unmatched-pair": true
+  }
+}

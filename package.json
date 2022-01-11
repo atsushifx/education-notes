@@ -1,0 +1,23 @@
+{
+  "name": "education-notes",
+  "version": "1.0.0",
+  "description": "notes, programs, erc for online education course for computer science",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atsushifx/education-notes-for-moocs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atsushifx/education-notes-for-moocs/issues"
+  },
+  "homepage": "https://github.com/atsushifx/education-notes-for-moocs#readme",
+  "devDependencies": {
+    "dictionary-en": "^3.1.0"
+  }
+}
