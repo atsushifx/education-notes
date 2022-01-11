@@ -1,0 +1,3 @@
+Hi, My name is Atsushi Furukawa. I live in Japan.
+I join this course for using English skill more efficiently.
+Since I worked as a programmer, so I want to use English to write OSS issues.
