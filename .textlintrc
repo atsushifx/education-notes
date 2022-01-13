@@ -1,8 +1,8 @@
 {
   "filters": {
-    "allowlist": {
-      "allowlistConfigPaths": []
-    }
+    "allowlist": [
+      ".textlint/allowlist.yml"
+    ]
   },
   "rules": { // for wriing English
     "ginger": {
