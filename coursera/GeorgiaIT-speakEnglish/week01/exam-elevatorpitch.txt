@@ -1,0 +1,5 @@
+Nice to meet you. My name is Atsushi Furukawa.
+My job is as a programmer.
+Now, I am learning a new programming language typescript and make small product with them.
+
+See you later, bye.
