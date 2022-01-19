@@ -1,0 +1,15 @@
+# EditorConfig is awesome: https://EditorConfig.org
+#
+# default editorconfig set ~/ to symlink
+
+# top-most EditorConfig file
+##
+# root = true
+
+* Web Sites
+*
+[*.htm*]
+tab_width=2
+indent_size = 2
+indent_style = space
+
