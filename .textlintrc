@@ -16,9 +16,7 @@
     "spelling": {
       "lamnguage": "en",
       "skipPatterns": [
-        "Atsushi",
-        "Furukawa",
-        "OSS"
+        "gamification",
       ],
       "suggestCorrections": true,
     },
