@@ -9,16 +9,16 @@
       "skipPatterns": []
     },
     "write-good": {
-      "passive": false,
-      "thereIs": false
+      "passive": true,
+      "thereIs": true,
+      "adverb": true,
     },
     "common-misspellings": {},
     "spelling": {
-      "lamnguage": "en",
+      "language": "en",
       "skipPatterns": [
         "gamification",
         "LinkedIn",
-        "Twitter",
       ],
       "suggestCorrections": true,
     },
