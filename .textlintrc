@@ -17,6 +17,8 @@
       "lamnguage": "en",
       "skipPatterns": [
         "gamification",
+        "LinkedIn",
+        "Twitter",
       ],
       "suggestCorrections": true,
     },
