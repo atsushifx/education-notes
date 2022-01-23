@@ -23,9 +23,15 @@ indent_size = 2
 indent_style = space
 
 
-* Web Sites
-*
+# Web Sites
+#
 [*.htm*]
+tab_width=2
+indent_size = 2
+indent_style = space
+
+# ruby
+[*.rb]
 tab_width=2
 indent_size = 2
 indent_style = space

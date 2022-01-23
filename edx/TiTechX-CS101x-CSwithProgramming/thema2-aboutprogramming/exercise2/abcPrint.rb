@@ -12,10 +12,10 @@ ss = gets().chomp
 leng = ss.length
 aa = ss.unpack("C*")
 
-for  i in 0..(leng-1)
+for i in 0..(leng-1)
   sa = aa[i] - code_a
   if (0<=sa && sa<=26-1) then
-    puts(ss[i])
-    # print(ss[i], ", ", aa[i], ", ", sa, "\n")
+   puts(ss[i])
+   # print(ss[i], ", ", aa[i], ", ", sa, "\n")
   end
 end
