@@ -18,7 +18,7 @@ public class babyNames
     final int MALE   = 1;
     final int FEMALE = 2;
     final int TOTAL  = 0;
-    boolean IS_TEST = true;
+    boolean IS_TEST = false;
     
     // utility function
     private String babynameCSV(int year, boolean is_test) {
@@ -187,7 +187,7 @@ public class babyNames
             FileResource fr = new FileResource(f);
             int rank = getRankfromFile(name, gender, fr);
             
-            System.out.println("Name:"+ name + "(" + gender + ") rank is " + rank);
+            // System.out.println("Name:"+ name + "(" + gender + ") rank is " + rank);
             if (rank > 0) {
                 totalRank += rank;
                 rankNum++;
@@ -231,7 +231,7 @@ public class babyNames
         FileResource fr = new FileResource();
         
         int[] total = totalBirths(fr);
-        System.out.println("男性:" + total[MALE] + " 女性:" + total[FEMALE] + " 合計:" + total[TOTAL]);
+        System.out.println("Male:" + total[MALE] + " Female:" + total[FEMALE] + " total:" + total[TOTAL]);
     }
     
     // 出生数ランク（性別)
@@ -394,5 +394,4 @@ public class babyNames
         total = getTotalBirthsRankedHigher(year, name, gender);
         System.out.println("Name:"+name+"("+gender+") higher ranks birth: " + total); // expect 15
     }
-    
 }
