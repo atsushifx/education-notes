@@ -26,10 +26,8 @@ $~*
 ## for linux command line education
 
 # General
-.vagrant/
-
 # Log files (if you are creating logs in debug mode, uncomment this)
-# *.log
+*.log
 
 
 ### java
@@ -42,6 +40,8 @@ $~*
 
 # BlueJ files
 *.ctxt
+*/userhome/
+
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
