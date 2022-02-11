@@ -1,19 +1,13 @@
 {
   "name": "education-notes",
   "version": "1.0.0",
-  "description": "notes, programs, erc for online education course for computer science",
+  "description": "online education notes for cousera, edx, ...",
+  "packageManager": "pnpm@6.30.1",
   "main": "index.js",
-  "author": "Furukawa, Atsushifx <atsushifx@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atsushifx/education-notes.git"
+    "url": "https://github.com/atsushifx/education-notes.git"
   },
-  "bugs": {
-    "url": "https://github.com/atsushifx/education-notes/issues"
-  },
-  "homepage": "https://github.com/atsushifx/education-notes#readme"
+  "author": "Furukawa Atsushi <atsushifx@gmail.com>",
+  "license": "MIT"
 }
