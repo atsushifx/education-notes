@@ -3,21 +3,17 @@
   "version": "1.0.0",
   "description": "notes, programs, erc for online education course for computer science",
   "main": "index.js",
+  "author": "Furukawa, Atsushifx <atsushifx@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atsushifx/education-notes-for-moocs.git"
+    "url": "git+https://github.com/atsushifx/education-notes.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/atsushifx/education-notes-for-moocs/issues"
+    "url": "https://github.com/atsushifx/education-notes/issues"
   },
-  "homepage": "https://github.com/atsushifx/education-notes-for-moocs#readme",
-  "devDependencies": {
-    "dictionary-en": "^3.1.0"
-  }
+  "homepage": "https://github.com/atsushifx/education-notes#readme"
 }

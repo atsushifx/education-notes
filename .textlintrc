@@ -4,23 +4,23 @@
       ".textlint/allowlist.yml"
     ]
   },
-  "rules": { // for wriing English
+  "rules": {
     "ginger": {
       "skipPatterns": []
     },
     "write-good": {
       "passive": true,
       "thereIs": true,
-      "adverb": true,
+      "adverb": true
     },
     "common-misspellings": {},
     "spelling": {
       "language": "en",
       "skipPatterns": [
-        "gamification",
-        "LinkedIn",
+        "Atsushi",
+        "Furukawa"
       ],
-      "suggestCorrections": true,
+      "suggestCorrections": true
     },
     "@proofdict/proofdict": {
       "dictURL": "https://atsushifx.github.io/proof-dictionary/"
