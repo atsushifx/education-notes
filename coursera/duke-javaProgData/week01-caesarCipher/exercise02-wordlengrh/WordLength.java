@@ -61,12 +61,12 @@ public class WordLength
     
     
     /**
-     * testCountWordLength
+     * exam
      */
-    public void testCountWordLength() {
-        System.out.println("\n  1. count word length.");
+    public void exam() {
+        System.out.println("\n  2 count word length. for exam");
         
-        FileResource fr = new FileResource("data/smallHamlet.txt");
+        FileResource fr = new FileResource();
         int[] counts = new int[31];
         
         countWordLength(fr, counts);

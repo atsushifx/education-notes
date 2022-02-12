@@ -20,17 +20,24 @@ public class CaesarBreaker
     }
     
     /**
-     * crack Caesar Cipher two keys
+     * decrypt Caesar Cipher two keys
      */
-    String decryptTwoKeys(String encMessage) {
-        int key1 = getKey(halfOfString(encMessage, 0));
-        int key2 = getKey(halfOfString(encMessage, 1));
-        
+    String decryptTwoKeys(String encMessage, int key1, int key2) {
         CaesarCipher cc = new CaesarCipher();
-        String message = cc.encryptTwoKeys(encMessage, 26-key1, 26-key2);
+        int deckey1 = (26 - key1 + 26) % 26;
+        int deckey2 = (26 - key2 + 26) % 26;
+        String message = cc.encryptTwoKeys(encMessage, deckey1, deckey2);
         return message;
     }
-    
+    /**
+     * 
+     */
+    String crackTwoKeys(String encMessage) {
+        int key1 = getKey(halfOfString(encMessage, 0));
+        int key2 = getKey(halfOfString(encMessage, 1));
+        System.out.println("key:" + key1 + ",　" + key2);
+        return decryptTwoKeys(encMessage, key1, key2);    
+    }
     /**
      * divide message odd/even
      */
@@ -38,10 +45,9 @@ public class CaesarBreaker
         StringBuilder buffer = new StringBuilder();
         
         int len = message.length();
-        for (int i=0; i<len; i+=2) {
-            int idx = i+start;
-            if (idx<len) {
-                buffer.append(message.charAt(idx));
+        for (int i=start; i<len; i+=2) {
+            if (i<len) {
+                buffer.append(message.charAt(i));
             }
         }
         return buffer.toString();
@@ -51,7 +57,7 @@ public class CaesarBreaker
      *   count letter to histgram
      */   
     int[] countLetters(String message) {
-        final String ALPHABET="abvdefghijklmnopqrstuvwxyz";
+        final String ALPHABET="abcdefghijklmnopqrstuvwxyz";
         
         int[] counts = new int[26];
         for (int i=0; i<message.length(); i++) {
@@ -108,8 +114,26 @@ public class CaesarBreaker
         System.out.println("\n  2. decode 2 keys caesar cipher");
         FileResource fr = new FileResource();
         String encMessage = fr.asString();
-        String message = decryptTwoKeys(encMessage);
+        
+        String message = crackTwoKeys(encMessage);
         System.out.println("\nmessage\n" + message);
     }
-
+    
+    /**
+     * for exam
+     */
+    public void exam() {
+        System.out.println("\n  exam for breaking cipher");
+        
+        String encMessage = "Top ncmy qkff vi vguv vbg ycpx";
+        System.out.println("8.\n"+decryptTwoKeys(encMessage, 2, 20));
+        
+        encMessage = "Akag tjw Xibhr awoa aoee xakex znxag xwko";
+        System.out.println("9.\n"+crackTwoKeys(encMessage));
+        
+        FileResource fr = new FileResource("data/mysteryTwoKeysPractice.txt");
+        encMessage = fr.asString();
+        System.out.println("10.\n"+crackTwoKeys(encMessage));
+        
+    }
 }
