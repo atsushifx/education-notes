@@ -2,7 +2,6 @@
   "name": "education-notes",
   "version": "1.0.0",
   "description": "online education notes for cousera, edx, ...",
-  "packageManager": "pnpm@6.30.1",
   "main": "index.js",
   "repository": {
     "type": "git",
