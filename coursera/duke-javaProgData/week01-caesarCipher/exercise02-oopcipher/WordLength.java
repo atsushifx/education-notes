@@ -63,20 +63,17 @@ public class WordLength
     /**
      * exam
      */
-    public void exam() {
+    public void countFile(String filename) {
         System.out.println("\n  2 count word length. for exam");
         
-        FileResource fr = new FileResource();
+        FileResource fr = new FileResource("datas/"+filename);
         int[] counts = new int[31];
         
         countWordLength(fr, counts);
         
-        for (int i=1; i<counts.length; i++) {
-            System.out.println("len:" + i + " = " + counts[i]);
-        }
-        
         int idxMax = indexOfMax(counts);
-        System.out.println("Index of max:"+idxMax+", counts:" + counts[idxMax]);
+        
+        System.out.println("\n"+filename+"\nIndex of max:"+idxMax+", counts:" + counts[idxMax]);
     }
     
 }
