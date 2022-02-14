@@ -6,7 +6,11 @@
   },
   "rules": {
     "ginger": {
-      "skipPatterns": []
+      "skipPatterns": [
+        "Wakayama",
+        "za",
+        "isu"
+      ]
     },
     "write-good": {
       "passive": true,
@@ -18,7 +22,11 @@
       "language": "en",
       "skipPatterns": [
         "Atsushi",
-        "Furukawa"
+        "Furukawa",
+        "Coursera",
+        "AGLA",
+        "Wakayama",
+        "za-isu"
       ],
       "suggestCorrections": true
     },
