@@ -1,0 +1,8 @@
+{
+  "name": "http_server",
+  "version": "1.0.0",
+  "description": "hello world",
+  "main": "index.js",
+  "author": "Furukawa Atsushi",
+  "license": "MIT"
+}
