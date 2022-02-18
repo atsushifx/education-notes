@@ -21,10 +21,10 @@ public class WordFrequencies
     
     public void findUnique(){
         FileResource fr = new FileResource();
-        findUnique(fr);
+        findUniqueinFile(fr);
     }
     
-    public void findUnique(FileResource resource){
+    public void findUniqueinFile(FileResource resource){
         for(String s : resource.words()){
             s = s.toLowerCase();
             int index = myWords.indexOf(s);
@@ -55,7 +55,15 @@ public class WordFrequencies
         System.out.println("max word/freq: "+myWords.get(index)+" "+myFreqs.get(index));
     }
     
-    
+    public void testerWithFile(String scenarioFile){
+        System.out.println("\n  test with file:"+scenarioFile);
+        FileResource fr = new FileResource(scenarioFile);
+        findUniqueinFile(fr);
+        int index = findMax();
+        
+        System.out.println("# unique words: "+myWords.size());
+        System.out.println("max word/freq: "+myWords.get(index)+" / "+myFreqs.get(index));
+    }
     public int findMax(){
         int max = myFreqs.get(0);
         int maxIndex = 0;

@@ -80,16 +80,19 @@ public class CharactersInPlay
     }
     
     /**
-     * tester
+     * testerwithFilw
      *   test character plays count
      */
-    public void tester2_likeit() {
-        System.out.println("\n  test.2 -- count plays 'likeit' ");
-        
-        FileResource fr = new FileResource("../datas/likeit.txt");
+    public void testerwithFile(String scenarioFile) {
+        // System.out.println("\n  qtest. with file:" + scenarioFile);
+    
+        FileResource fr = new FileResource(scenarioFile);
         findCharactersinFile(fr);
         
-        charactersWithNumParts(3, 150);
+        charactersWithNumParts(3, 0);
+        System.out.println("\n  q.6 -  charactert plays 10 to 15.");
+        charactersWithNumParts(10, 15);
+        
     }
     /**
      * 
@@ -99,7 +102,7 @@ public class CharactersInPlay
             String person = myCharacters.get(i);
             Integer cnt = myCounts.get(i);
         
-            if (min<=cnt && cnt<=max) {
+            if (min<=cnt && (cnt<=max || max<=0)) {
                 System.out.println(person + "\t" + cnt);
             }
         }
