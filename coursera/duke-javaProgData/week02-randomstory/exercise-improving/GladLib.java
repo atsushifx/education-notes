@@ -2,43 +2,55 @@ import edu.duke.*;
 import java.util.*;
 
 /**
- * gladlib
+ * gladlib with HashMap
  */
 public class GladLib {
-    private ArrayList<String> adjectiveList;
-    private ArrayList<String> nounList;
-    private ArrayList<String> colorList;
-    private ArrayList<String> countryList;
-    private ArrayList<String> nameList;
-    private ArrayList<String> animalList;
-    private ArrayList<String> timeList;
-    private ArrayList<String> verbList;
-    private ArrayList<String> fruitList;
+    /**
+     * keyword list
+     */
+    private HashMap<String, ArrayList<String>>  myMap;
     private Random myRandom;
+    private String myDatasource;
     
     private static String dataSourceURL = "http://dukelearntoprogram.com/course3/data";
     private static String dataSourceDirectory = "data";
     
     public GladLib(){
+        initializeField(dataSourceDirectory);
         initializeFromSource(dataSourceDirectory);
-        myRandom = new Random();
+        
     }
     
     public GladLib(String source){
+        initializeField(source);
         initializeFromSource(source);
+    }
+    
+    /**
+     * initialize keywordMap & random
+     */
+    private void initializeField(String datasource) {
+        myDatasource = datasource;
         myRandom = new Random();
+        myMap = new HashMap<String, ArrayList<String>>();
     }
     
     private void initializeFromSource(String source) {
-        adjectiveList= readIt(source+"/adjective.txt");    
-        nounList = readIt(source+"/noun.txt");
-        colorList = readIt(source+"/color.txt");
-        countryList = readIt(source+"/country.txt");
-        nameList = readIt(source+"/name.txt");        
-        animalList = readIt(source+"/animal.txt");
-        timeList = readIt(source+"/timeframe.txt");
-        verbList = readIt(source+"/verb.txt");
-        fruitList = readIt(source+"/fruit.txt");
+        Set<String> keywordList = new HashSet<>(Arrays.asList("adjective", "noun", "verb", "color", "country", "name", "animal", "timeframe", "fruit"));
+        
+        for (String keyword : keywordList) {
+            initKeywords(keyword);
+        }
+    }    
+    
+    /**
+     * initializeList
+     */
+    private void initKeywords(String keyword) {
+        if (myMap.containsKey(keyword)) { return; } // 初期化済み
+        String datafile = myDatasource + "/" + keyword + ".txt";
+        ArrayList<String> keywordList = readIt(datafile);
+        myMap.put(keyword, keywordList);
     }
     
     private String randomFrom(ArrayList<String> source){
@@ -47,37 +59,21 @@ public class GladLib {
     }
     
     private String getSubstitute(String label) {
-        if (label.equals("country")) {
-            return randomFrom(countryList);
-        }
-        if (label.equals("color")){
-            return randomFrom(colorList);
-        }
-        if (label.equals("noun")){
-            return randomFrom(nounList);
-        }
-        if (label.equals("name")){
-            return randomFrom(nameList);
-        }
-        if (label.equals("adjective")){
-            return randomFrom(adjectiveList);
-        }
-        if (label.equals("animal")){
-            return randomFrom(animalList);
-        }
-        if (label.equals("timeframe")){
-            return randomFrom(timeList);
-        }
-        if (label.equals("verb")){
-            return randomFrom(verbList);
-        }
-        if (label.equals("fruit")){
-            return randomFrom(fruitList);
-        }
         if (label.equals("number")){
             return ""+myRandom.nextInt(50)+5;
         }
-        return "**UNKNOWN**";
+        //
+        String keyword = "**UNKNOWN**";
+        if (!myMap.containsKey(label)) {
+            // do nothing
+            // initKeywords(label);
+        } else {
+            keyword = randomFrom(myMap.get(label));    
+            if (keyword == "") {
+                keyword = "**UNKNOWN**";
+            }
+        }
+        return keyword;
     }
     
     private String processWord(String w){
@@ -128,8 +124,7 @@ public class GladLib {
             for(String line : resource.lines()){
                 list.add(line);
             }
-        }
-        else {
+        } else {
             FileResource resource = new FileResource(source);
             for(String line : resource.lines()){
                 list.add(line);
@@ -140,7 +135,7 @@ public class GladLib {
     
     public void makeStory(){
         System.out.println("\n");
-        String story = fromTemplate("data/madtemplate2.txt");
+        String story = fromTemplate("data/madtemplate3.txt");
         printOut(story, 60);
     }
     
