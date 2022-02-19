@@ -1,5 +1,6 @@
 import java.util.*;
 import edu.duke.*;
+
 /**
  * CodonCounter
  *   create codon map anf count codons
@@ -16,7 +17,6 @@ public class CodonCounter
      */
     public CodonCounter() {
         myCodonMap = new HashMap<String, Integer>();
-        
     }
     
     /**
@@ -26,6 +26,7 @@ public class CodonCounter
      */
     void buildCodonMap(int start, String dna) {
         myCodonMap.clear();
+        dna = dna.trim();
         int len = dna.length();
         for (int i = start; i<len; i+=3) {
             if (i+3 <= len) {
@@ -40,6 +41,8 @@ public class CodonCounter
      *   add codon to codon map
      */
     private void addCodon(String codon) {
+        if (codon.length() != 3){ return; }
+        
         if (myCodonMap.containsKey(codon)) {
             int cnt = myCodonMap.get(codon);
             myCodonMap.put(codon, cnt + 1);
@@ -48,6 +51,23 @@ public class CodonCounter
         }
     }
     
+    /**
+     * getMostCommonCodon 
+     */
+    String getMostCommonCodon() {
+        String commonCodon = "";
+        int maxCnt = 0;
+        
+        for (String codon : myCodonMap.keySet()) {
+            int cnt = myCodonMap.get(codon);
+            
+            if (cnt>maxCnt || maxCnt==0) {
+                maxCnt = cnt;
+                commonCodon = codon;
+            }
+        }
+        return commonCodon;
+    }
     
     /**
      *  printCodonCounts
@@ -69,18 +89,16 @@ public class CodonCounter
      */
     public void tester() {
         System.out.println("\n 　test codon map");
-        String dna = "CGTTCAAGTTCAA";
+        FileResource fr = new FileResource("data/smalldna.txt");
+        String dna = fr.asString();
         
-        System.out.println("start 0");
-        buildCodonMap(0, dna);
-        printCodonCounts(0, 15);
-        
-        System.out.println("start 1");
-        buildCodonMap(1, dna);
-        printCodonCounts(0, 15);
-        
-        System.out.println("start 2");
-        buildCodonMap(2, dna);
-        printCodonCounts(0, 15);
+        for (int st=0; st<=2; st++) {
+            System.out.println("\n  start " + st);
+            buildCodonMap(st, dna);
+            String codon = getMostCommonCodon();
+            int cnt = myCodonMap.get(codon);
+            System.out.println("MostCommon: " + codon + " " + cnt);
+            printCodonCounts(0, 15);
+        } 
     }
 }
