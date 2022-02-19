@@ -9,6 +9,7 @@ public class GladLib {
      * keyword list
      */
     private HashMap<String, ArrayList<String>>  myMap;
+    private HashMap<String, Boolean> myUsed;
     private Random myRandom;
     private String myDatasource;
     
@@ -33,6 +34,7 @@ public class GladLib {
         myDatasource = datasource;
         myRandom = new Random();
         myMap = new HashMap<String, ArrayList<String>>();
+        myUsed = new HashMap<String, Boolean>();
     }
     
     private void initializeFromSource(String source) {
@@ -51,6 +53,7 @@ public class GladLib {
         String datafile = myDatasource + "/" + keyword + ".txt";
         ArrayList<String> keywordList = readIt(datafile);
         myMap.put(keyword, keywordList);
+        myUsed.put(keyword, false);
     }
     
     private String randomFrom(ArrayList<String> source){
@@ -68,6 +71,7 @@ public class GladLib {
             // do nothing
             // initKeywords(label);
         } else {
+            myUsed.put(label, true);
             keyword = randomFrom(myMap.get(label));    
             if (keyword == "") {
                 keyword = "**UNKNOWN**";
@@ -127,18 +131,54 @@ public class GladLib {
         } else {
             FileResource resource = new FileResource(source);
             for(String line : resource.lines()){
-                list.add(line);
+                line = line.trim();
+                if (line != "") {
+                    list.add(line);
+                }
             }
         }
         return list;
     }
     
-    public void makeStory(){
-        System.out.println("\n");
-        String story = fromTemplate("data/madtemplate3.txt");
-        printOut(story, 60);
+    /**
+     * totalWordsInMap
+     *   count all keywords from readings
+     */
+    int totalWordsInMap() {
+        int total = 0;
+        for (ArrayList<String> keywords : myMap.values()) {
+            total += keywords.size();
+        }
+        return total;
     }
     
-
-
+    /**
+     * totalWordsConsidered
+     *   
+     */
+    int totalWordsConsidered() {
+        int total = 0;
+        for (String keyword : myMap.keySet()) {
+            if (myUsed.get(keyword)) {
+                total += myMap.get(keyword).size();
+            }
+        }
+        return total;
+        
+    }
+    
+    /**
+     * makeStory
+     *   create story from template & keywords
+     */
+    public void makeStory(){
+        System.out.println("\n");
+        String story = fromTemplate("data/madtemplate2.txt");
+        printOut(story, 60);
+        
+        System.out.println("\n  total");
+        System.out.println("keywords: " + totalWordsInMap());
+        System.out.println("considered: " + totalWordsConsidered());
+    }
+    
 }
