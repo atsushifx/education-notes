@@ -26,9 +26,7 @@ public class WordsInFiles
      * buildWordFileMap
      *   build Words in Files with file select
      */
-    void buildWordFileMap() {
-        DirectoryResource dr = new DirectoryResource();
-        
+    void buildWordFileMap(DirectoryResource dr) {
         for (File f : dr.selectedFiles()) {
             addWordsFromFile(f);
         }
@@ -117,7 +115,9 @@ public class WordsInFiles
     public void tester() {
         System.out.println("\n  test words in files.");
         
-        buildWordFileMap();
+        DirectoryResource dr = new DirectoryResource();
+        
+        buildWordFileMap(dr);
         
         ArrayList<String> words = wordsInNumFiles(2);
         System.out.println("max\t" + maxNumber());

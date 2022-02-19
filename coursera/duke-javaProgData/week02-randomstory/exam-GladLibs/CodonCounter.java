@@ -95,7 +95,12 @@ public class CodonCounter
         }
     }
     
-    
+    /**
+     * 
+     */
+    public int getUniqueCodons() {
+        return myCodonMap.size();
+    }
     
     /**
      * tester
