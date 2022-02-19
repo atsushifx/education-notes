@@ -60,6 +60,37 @@ public class WordsInFiles
         }
     }
 
+    /**
+     * maxNumber 
+     */
+    int maxNumber() {
+        int maxFiles = 0;
+        
+        for (ArrayList<String> filelist : WordsinFiles.values()) {
+            int fileNum = filelist.size();
+            if (fileNum > maxFiles) {
+                maxFiles = fileNum;
+            }
+        }
+        return maxFiles;
+    }
+    
+    /**
+     * wordsInNumFiles
+     *   make words list from contains file number
+     */
+    ArrayList<String> wordsInNumFiles(int number) {
+        ArrayList<String> wordslist = new ArrayList<String>();
+        
+        for (String word : WordsinFiles.keySet()) {
+            ArrayList<String> files = WordsinFiles.get(word);
+            
+            if (files.size() == number) {
+                wordslist.add(word);
+            }
+        }
+        return wordslist;
+    }
     
     /**
      * printFilesIn
@@ -77,8 +108,7 @@ public class WordsInFiles
             System.out.println(filelist.get(i));
         }
     }
-    
-    
+
     
     /**
      * tester
@@ -88,7 +118,11 @@ public class WordsInFiles
         System.out.println("\n  test words in files.");
         
         buildWordFileMap();
-        printFilesIn("elves");
-        printFilesIn("cats");
+        
+        ArrayList<String> words = wordsInNumFiles(2);
+        System.out.println("max\t" + maxNumber());
+        printFilesIn("dogs");
+        System.out.println("words\t"+words);
+        
     }
 }
