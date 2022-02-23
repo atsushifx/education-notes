@@ -5,5 +5,6 @@
 	"markdown.extension.print.absoluteImgPath": false,
 	"textlint.autoFixOnSave": true,
 	"textlint.configPath": ".textlintrc",
-	"textlint.trace": "messages"
+	"textlint.trace": "",
+	"textlint.nodePath": "C:/Users/atsushifx/AppData/Roaming/npm/pnpm-global/5/node_modules",
 }
