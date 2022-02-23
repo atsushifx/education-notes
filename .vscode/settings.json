@@ -1,6 +1,9 @@
 {
 	"workbench.colorTheme": "Iceberg Light",
 	"editor.cursorStyle": "block",
-	"markdown.extension.preview.autoShowPreviewToSide": true,
-	"markdown.extension.print.absoluteImgPath": false
+	"textlinmarkdown.extension.preview.autoShowPreviewToSide": true,
+	"markdown.extension.print.absoluteImgPath": false,
+	"textlint.autoFixOnSave": true,
+	"textlint.configPath": ".textlintrc",
+	"textlint.trace": "messages"
 }

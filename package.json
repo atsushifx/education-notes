@@ -1,12 +1,12 @@
 {
   "name": "education-notes",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "online education notes for cousera, edx, ...",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/atsushifx/education-notes.git"
+    "url": "git+https://github.com/atsushifx/education-notes.git"
   },
-  "author": "Furukawa Atsushi <atsushifx@gmail.com>",
+  "author": "Furukawa, Atsushi <atsushifx@gmail.com>",
   "license": "MIT"
 }
