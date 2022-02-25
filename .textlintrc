@@ -26,7 +26,8 @@
         "Coursera",
         "AGLA",
         "Wakayama",
-        "za-isu"
+        "za-isu",
+        /(\d\d\d\d)s?/g
       ],
       "suggestCorrections": true
     },
