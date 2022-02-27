@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #c65353;
+    width: 100%;
+}
+
+/* desktop */
+.col-1,
+.col-2 {
+    float:left;
+    width: 32%;
+    margin: 20px 0.5%;
+}
+
+/* tablet */
+@media (max-width:911px) {
+    .col-1 {
+        width: 48%;
+        margin: 20px 0.5%;
+    }
+
+    .col-2 {
+        width: 98%;
+        margin: 20px 0.5%;
+    }
+}
+
+
+/* mobile */
+@media (max-width:767px) {
+    .col-1, .col-2 {
+        width: 98%;
+    }
+}
+
+
+h1 {
+    text-align: center;
+}
+
+.menuContents {
+    position: relative;
+    border: 1px solid black;
+    background-color: lightgray;
+    padding: 1em;
+    padding-top: 3.4em;
+    height: 14em;
+    overflow: hidden;
+}
+
+.menuContents h2 {
+    position: absolute;
+    width: 5.5em;
+    height: 1.5em;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    background: lightblue;
+    text-align: center;
+}
