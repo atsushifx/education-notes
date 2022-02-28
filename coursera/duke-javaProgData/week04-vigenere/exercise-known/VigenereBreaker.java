@@ -3,8 +3,7 @@ import edu.duke.*;
 
 public class VigenereBreaker {
     private int[] myKeys = null;   // crack key
-    
-    
+     
     public String sliceString(String message, int whichSlice, int totalSlices) {
         StringBuilder buff = new StringBuilder();
         int len = message.length();
@@ -37,7 +36,6 @@ public class VigenereBreaker {
         VigenereCipher dec = new VigenereCipher(myKeys);
         return dec.decrypt(encrypted);
     }
-    
     
     public void breakVigenere() {
         
