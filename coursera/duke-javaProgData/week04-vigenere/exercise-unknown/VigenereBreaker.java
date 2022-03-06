@@ -48,13 +48,19 @@ public class VigenereBreaker {
      */
     public void breakVigenere() {
         FileResource fr = new FileResource();  // dialog
+        breakVigenere(fr);
+    }
+    
+    /**
+     * breakVigenere
+     */
+    public void breakVigenere(FileResource fr) {
         HashMap<String, Integer> languages = new HashMap<String, Integer>();
         
         String decrypt = breakForAllLangs(fr.asString(), languages);
         System.out.println("lang/count\n" + languages);
-        System.out.println("\n decrypt:\n" + decrypt.substring(0, 300));
+        System.out.println("\n decrypt:\n" + decrypt.substring(0, 150));
     }
-    
     /**
      * crackwithKey
      */
