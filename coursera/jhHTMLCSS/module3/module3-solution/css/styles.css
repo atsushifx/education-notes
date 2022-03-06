@@ -1,0 +1,28 @@
+/** ALL STYLE */
+* {
+  box-sizing: border-box;
+}
+
+body {
+    color: whitesmoke;
+    background: azure;
+}
+
+/** HEADER */
+.navbar-brand {
+}
+
+.navbar-brand h1 {
+  font-family: serif;
+  color: darkblue;
+  margin: 0 4px;
+  line-height: .75;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+#nav-list {
+  text-align: center;
+}
