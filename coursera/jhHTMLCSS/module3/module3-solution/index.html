@@ -22,13 +22,14 @@
   <header>
     <nav id="header-nav" class="navbar navbar-default">
       <div class="container">
-        <div class="navbar-header">
+        <div class="navbar-header raw">
           <div class="navbar-brand">
             <a href="index.html">
               <h1>Food, LLC</h1>
             </a>
           </div>
 
+          <!-- humberger menu -->
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav"
             aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
@@ -39,12 +40,12 @@
 
         </div>
 
-
-        <div id="collapsable-nav" class="collapse navbar-collapse">
-          <ul id="nav-list" class="nav navbar-nav hidden-sm alert-warning hidden-lg">
-            <li><a href="#">Chicken</a></li>
-            <li><a href="#">Beef</a></li>
-            <li><a href="#">Sushi</a></li>
+        <!-- dropsown menu -->
+        <div id="collapsable-nav" class="collapse navbar-collapse raw">
+          <ul id="nav-list" class="nav navbar-nav visible-xs">
+            <li><a href="#mod-chicken">Chicken</a></li>
+            <li><a href="#mod-beef">Beef</a></li>
+            <li><a href="#mod-sushi">Sushi</a></li>
           </ul><!-- #nav-list -->
         </div>
       </div>
@@ -52,6 +53,57 @@
     </nav>
   </header>
 
+  <!-- MAIN CONTENT -->
+  <div id="main-contents" class="container">
+    <h2 id="mod-ourmenu" class="text-center">Our Menu</h2>
+
+    <section class="row">
+      <div class="col-md-4 col-sm-6 col-xs-12 mod-main">
+        <div class="mod-mainmenu">
+          <h3 id="mod-chicken">Chiken</h3>
+          Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+          aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu
+          fugiat nulla
+          pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12 mod-main">
+        <div class="mod-mainmenu">
+          <h3 id="mod-beef">Beef</h3>
+          Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+          aliquid
+          ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est
+          laborum.
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-12 col-xs-12 mod-main">
+        <div class="mod-mainmenu">
+          <h3 id="mod-sushi">Sushi</h3>
+          Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+          aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu
+          fugiat nulla
+          pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+          aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu
+          fugiat nulla
+          pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </div>
+      </div>
+
+    </section>
+  </div>
   <!-- jQuery (Bootstrap JS plugins depend on it) -->
   <script src="js/jquery-1.11.3.min.js"></script>
   <script src="js/bootstrap.min.js"></script>

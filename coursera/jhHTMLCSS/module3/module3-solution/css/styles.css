@@ -4,17 +4,17 @@
 }
 
 body {
-    color: whitesmoke;
+    color: darkgray;
     background: azure;
 }
 
 /** HEADER */
 .navbar-brand {
+  color: darkblue;
 }
 
 .navbar-brand h1 {
   font-family: serif;
-  color: darkblue;
   margin: 0 4px;
   line-height: .75;
 }
@@ -22,7 +22,36 @@ body {
 .navbar-brand a:hover, .navbar-brand a:focus {
   text-decoration: none;
 }
-
+/* dropdown */
 #nav-list {
+  text-align: center;
+  background: bisque;
+}
+
+#nav-list li {
+  margin:0 auto;
+}
+
+/** MAIN CINTENTS **/
+#main-contents h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.mod-mainmenu {
+  position: relative;
+  color: whitesmoke;
+  background: darkorange;
+  margin: 12px;
+  padding: 2.1em 4px 4px;
+}
+
+.mod-mainmenu h3 {
+  position: absolute;
+  top:0%;
+  right:0%;
+  margin:0;
+  padding: 0;
+  width: 5.6em;
+  background: darkgoldenrod;
   text-align: center;
 }
