@@ -40,7 +40,7 @@ $~*
 
 # BlueJ files
 *.ctxt
-*/userhome/
+*userhome/
 
 
 # Mobile Tools for Java (J2ME)
