@@ -29,10 +29,7 @@ public class EarthQuakeClient2 {
      * 
      */
     public void quakesWithFilter() {
-        EarthQuakeParser parser = new EarthQuakeParser(); 
-        //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
-        String source = "data/nov20quakedatasmall.atom";
-        ArrayList<QuakeEntry> list  = parser.read(source);         
+        ArrayList<QuakeEntry> list  = readQuakes("testing"); // for test         
         System.out.println("\nread data for "+list.size()+" quakes.\n");
         /*
         Filter f = new MagnitudeFilter(4.00, 5.00);
@@ -41,12 +38,26 @@ public class EarthQuakeClient2 {
         Filter fdepth = new DepthFilter(-35000.0, -12000.0);
         ArrayList<QuakeEntry> m8  = filter(m7, fdepth);
         */
+        /*
         Filter fdistance= new DistanceFilter(new Location(35.42, 139.43), 10000 * 1000);
         ArrayList<QuakeEntry> q2  = filter(list, fdistance);
         
         Filter fphrase = new PhraseFilter("Japan", "end");
         ArrayList<QuakeEntry> q3 = filter(q2, fphrase);
         outputQuakes(q3, fphrase.getName());
+        */
+        Filter fdistance = new DistanceFilter(new Location(35.42, 139.43), 10000 * 1000);
+        ArrayList<QuakeEntry> q1 = filter(list, fdistance);
+        Filter fphrase = new PhraseFilter("Japan", "end");
+        ArrayList<QuakeEntry> quakes = filter(q1, fphrase);
+        outputQuakes(quakes, "Tokyo 10000Km");
+        
+        Filter fmagnitude = new MagnitudeFilter(4.0, 5.0);
+        Filter fdepth = new DepthFilter(-35000.0, -12000.0);
+        
+        quakes = filter(filter(list, fmagnitude), fdepth);
+        outputQuakes(quakes, "Magnitude & Depth");
+        
     }
     
     /**
@@ -57,7 +68,7 @@ public class EarthQuakeClient2 {
         String source;
         if (quakeType == "production") {
             source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
-        } else if (quakeType == "test") {
+        } else if (quakeType == "testing") {
             source = "data/nov20quakedata.atom";
         } else {
             source = "data/nov20quakedatasmall.atom";
@@ -86,10 +97,17 @@ public class EarthQuakeClient2 {
      *   test MatchAllFilter 
      */
     public void testMatchAllFilter() {
-        ArrayList<QuakeEntry> list  = readQuakes("development");         
-        System.out.println("\n  read data for "+list.size()+" quakes");
+        // ArrayList<QuakeEntry> list  = readQuakes("development");         
+        ArrayList<QuakeEntry> list  = readQuakes("testing");         
+        System.out.println("\n read data for "+list.size()+" quakes");
         
         MatchAllFilter maf = new MatchAllFilter();
+        /*
+        maf.addFilter(new MagnitudeFilter(0.0, 2.0));
+        maf.addFilter(new DepthFilter(-100000.0, -10000.0));
+        maf.addFilter(new PhraseFilter("a", "any"));
+        */
+        
         maf.addFilter(new MagnitudeFilter(0.0, 2.0));
         maf.addFilter(new DepthFilter(-100000.0, -10000.0));
         maf.addFilter(new PhraseFilter("a", "any"));
@@ -103,12 +121,12 @@ public class EarthQuakeClient2 {
      *   test MatchAllFilter 
      */
     public void testMatchAllFilter2() {
-        ArrayList<QuakeEntry> list  = readQuakes("development");         
+        ArrayList<QuakeEntry> list  = readQuakes("testing");         
         System.out.println("\n  read data for "+list.size()+" quakes");
         
         MatchAllFilter maf = new MatchAllFilter();
         maf.addFilter(new MagnitudeFilter(0.0, 3.0));
-        maf.addFilter(new DistanceFilter(new Location(36.1314, -95.9372), 10000*1000));
+        maf.addFilter(new DistanceFilter(new Location(36.1314, -95.9372), 10000*1000)); // Tulsa, Okrahoma
         maf.addFilter(new PhraseFilter("Ca", "any"));
         
         ArrayList<QuakeEntry> quakes = filter(list, maf);
