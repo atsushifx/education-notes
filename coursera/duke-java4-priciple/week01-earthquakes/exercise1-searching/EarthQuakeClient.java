@@ -149,11 +149,17 @@ public class EarthQuakeClient {
         ArrayList<QuakeEntry> list  = parser.read(source);
         
         System.out.println("\n read data for "+list.size()+" quakes");
-        double minDepth = -8000.0;
-        double maxDepth = -5000.0;
+        double minDepth = -12000.0;
+        double maxDepth = -10000.0;
         
         System.out.println("Find quakes with depth between " + minDepth + " and " + maxDepth);
         ArrayList<QuakeEntry> quakes = filterByDepth(list, minDepth, maxDepth);
+        printQuakes(quakes, list);
+        
+        minDepth = -4000.0;
+        maxDepth = -2000.0;
+        System.out.println("Find quakes with depth between " + minDepth + " and " + maxDepth);
+        quakes = filterByDepth(list, minDepth, maxDepth);
         printQuakes(quakes, list);
     }
     
@@ -169,18 +175,23 @@ public class EarthQuakeClient {
         ArrayList<QuakeEntry> list  = parser.read(source);
         System.out.println("\n read data for "+list.size()+" quakes");
         ArrayList<QuakeEntry> founds; // search answer
-        
-        System.out.println("Find quakes by phrase 'Explosion' at start.");
-        founds = filterByPhrase(list, "Explosion", "start");
-        printQuakes(founds, list);
+
         /*
         System.out.println("Find quakes by phrase 'California' at end.");
         founds = filterByPhrase(list, "California", "end");
         printQuakes(founds, list);
         */
-       
-        System.out.println("Find quakes by phrase 'Creek' at any.");
-        founds = filterByPhrase(list, "Creek", "any");
+
+        System.out.println("Find quakes by phrase 'Quarry Blast'.");
+        founds = filterByPhrase(list, "Quarry Blast", "start");
+        printQuakes(founds, list);
+        
+        System.out.println("Find quakes by phrase 'Alaska'.");
+        founds = filterByPhrase(list, "Alaska", "end");
+        printQuakes(founds, list);
+
+        System.out.println("Find quakes by phrase 'Can'.");
+        founds = filterByPhrase(list, "Can", "any");
         printQuakes(founds, list);
               
     }

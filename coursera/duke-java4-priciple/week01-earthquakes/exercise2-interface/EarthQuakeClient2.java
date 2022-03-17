@@ -30,6 +30,8 @@ public class EarthQuakeClient2 {
      */
     public void quakesWithFilter() {
         ArrayList<QuakeEntry> list  = readQuakes("testing"); // for test         
+        ArrayList<QuakeEntry> founds; // for quakes found
+        
         System.out.println("\nread data for "+list.size()+" quakes.\n");
         /*
         Filter f = new MagnitudeFilter(4.00, 5.00);
@@ -46,6 +48,7 @@ public class EarthQuakeClient2 {
         ArrayList<QuakeEntry> q3 = filter(q2, fphrase);
         outputQuakes(q3, fphrase.getName());
         */
+        /*
         Filter fdistance = new DistanceFilter(new Location(35.42, 139.43), 10000 * 1000);
         ArrayList<QuakeEntry> q1 = filter(list, fdistance);
         Filter fphrase = new PhraseFilter("Japan", "end");
@@ -57,6 +60,17 @@ public class EarthQuakeClient2 {
         
         quakes = filter(filter(list, fmagnitude), fdepth);
         outputQuakes(quakes, "Magnitude & Depth");
+        */
+        // for examination
+        Filter fdistance = new DistanceFilter(new Location(39.7392, -104.990), 1000 * 1000); // Denver
+        Filter fphrase = new PhraseFilter("a", "end");
+        founds = filter(filter(list, fdistance), fphrase);
+        outputQuakes(founds, "filter near Denver, end of 'a'");
+        
+        Filter fmagnitude = new MagnitudeFilter( 3.5,4.5);
+        Filter fdepth = new DepthFilter(-55000.0, -20000.0);
+        founds = filter(filter(list, fmagnitude), fdepth);
+        outputQuakes(founds, "Mag & Depth");
         
     }
     
@@ -98,7 +112,7 @@ public class EarthQuakeClient2 {
      */
     public void testMatchAllFilter() {
         // ArrayList<QuakeEntry> list  = readQuakes("development");         
-        ArrayList<QuakeEntry> list  = readQuakes("testing");         
+        ArrayList<QuakeEntry> list  = readQuakes("production");         
         System.out.println("\n read data for "+list.size()+" quakes");
         
         MatchAllFilter maf = new MatchAllFilter();
@@ -107,13 +121,21 @@ public class EarthQuakeClient2 {
         maf.addFilter(new DepthFilter(-100000.0, -10000.0));
         maf.addFilter(new PhraseFilter("a", "any"));
         */
-        
+        /*  // exam from exercise
         maf.addFilter(new MagnitudeFilter(0.0, 2.0));
         maf.addFilter(new DepthFilter(-100000.0, -10000.0));
         maf.addFilter(new PhraseFilter("a", "any"));
-        
-        ArrayList<QuakeEntry> quakes = filter(list, maf);
-        outputQuakes(quakes, maf.getName());
+        */
+       
+        // examination by review
+        /*
+        maf.addFilter(new MagnitudeFilter(1.0, 4.0));
+        maf.addFilter(new DepthFilter(-180000.0, -30000.0)maf.addFilter(new PhraseFilter("o", "any"));
+        maf.addFilter(new PhraseFilter("o", "any"));
+        */
+        maf.addFilter(new PhraseFilter("Japan", "any"));
+        ArrayList<QuakeEntry> founds = filter(list, maf);
+        outputQuakes(founds, maf.getName());
     }
     
     /**
@@ -121,16 +143,25 @@ public class EarthQuakeClient2 {
      *   test MatchAllFilter 
      */
     public void testMatchAllFilter2() {
-        ArrayList<QuakeEntry> list  = readQuakes("testing");         
+        ArrayList<QuakeEntry> list  = readQuakes("testing");
+        ArrayList<QuakeEntry> founds; // found quakes by filter
+        
         System.out.println("\n  read data for "+list.size()+" quakes");
         
         MatchAllFilter maf = new MatchAllFilter();
+        /*
         maf.addFilter(new MagnitudeFilter(0.0, 3.0));
-        maf.addFilter(new DistanceFilter(new Location(36.1314, -95.9372), 10000*1000)); // Tulsa, Okrahoma
+        maf.addFilter(new DistanceFilter(new Location(36.1314, -95.9372), 55.7308, 9.115310000*1000)); // Tulsa, Okrahoma
         maf.addFilter(new PhraseFilter("Ca", "any"));
+        */
         
-        ArrayList<QuakeEntry> quakes = filter(list, maf);
-        outputQuakes(quakes, maf.getName());
+        // exam for quakes programming
+        maf.addFilter(new MagnitudeFilter(0.0, 5.0));
+        maf.addFilter(new DistanceFilter(new Location(55.7308, 9.1153), 3000 * 1000)); // Billund, Denmark
+        maf.addFilter(new PhraseFilter("e", "any"));
+        
+        founds = filter(list, maf);
+        outputQuakes(founds, maf.getName());
     }
     
     /**

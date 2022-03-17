@@ -65,7 +65,7 @@ public class LargestQuakes
         int index = indexOfLargest(list);
         System.out.println("Quake[" + index + "]: " + list.get(index));
         */
-        ArrayList<QuakeEntry> found = getLargest(list, 5);
+        ArrayList<QuakeEntry> found = getLargest(list, 50);
         for(int i=0; i<found.size(); i++){
             QuakeEntry entry = found.get(i);
             System.out.println(entry);
