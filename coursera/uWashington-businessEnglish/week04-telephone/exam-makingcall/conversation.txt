@@ -1,0 +1,19 @@
+-- Calling conversation scenario
+Hi, This is Atsushi Furukawa calling, and I am a senior programmer at IJ Solutions.
+I've met you at js.dev Yokohama last week.
+ 
+ >> Yes, I remember.
+ 
+ Well, I was calling today because I'll go to Yokohama next week.
+ And I am hoping that we can make a casual meeting then.
+ 
+ >> Sure.  We can meet at drop cafe.
+    (wait 3 seconds)   
+
+Sure. Thank you. 
+
+>> You are welcome.
+
+OK. I'll see you next Friday at drop cafe.
+Good bye.
+

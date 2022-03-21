@@ -1,0 +1,33 @@
+[core]
+	autocrlf = input
+##	editor = "code --wait "
+
+[color]
+	ui = true
+
+[user]
+	name = Atsushi Furukawa
+	email = atsushifx@aglabo.com
+
+[push]
+	default = current
+
+[init]
+	defaultBranch = main
+
+[alias]
+	co = checkout
+	st = status
+
+[credential]
+	helper = manager-core
+
+[credential "helperselector"]
+	selected = manager-core
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
