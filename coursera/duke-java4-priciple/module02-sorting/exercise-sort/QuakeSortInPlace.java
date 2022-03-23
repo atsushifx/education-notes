@@ -132,6 +132,7 @@ public class QuakeSortInPlace {
         int i;
         for (i=0; i<in.size(); i++) {
             if (checkInSortedOrder(in)) { break; }
+
             onePassBubbleSort(in, i);
         }
         System.out.println(i + " passes needed");
@@ -151,7 +152,6 @@ public class QuakeSortInPlace {
         }
         System.out.println(i + " passes needed.");
     }
-    
     
     
     /**
@@ -202,7 +202,7 @@ public class QuakeSortInPlace {
         list  = parser.read(source);
         sortByMagnitudeWithBubbleSortWithCheck(list);
     }
-
+    
     public void createCSV() {
         EarthQuakeParser parser = new EarthQuakeParser();
         //String source = "data/nov20quakedata.atom";
