@@ -202,6 +202,7 @@ public class QuakeSortInPlace {
         list  = parser.read(source);
         sortByMagnitudeWithBubbleSortWithCheck(list);
     }
+
     
     public void createCSV() {
         EarthQuakeParser parser = new EarthQuakeParser();
