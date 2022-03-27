@@ -55,10 +55,12 @@ public class QuakeSortInPlace {
      *   swap QuakeEntry in Quakes
      */
     private void swapQuakes(ArrayList<QuakeEntry> quakes, int i1, int i2) {
-        QuakeEntry q1 = quakes.get(i1);
-        QuakeEntry q2 = quakes.get(i2);
-        quakes.set(i1, q2);
-        quakes.set(i2, q1);
+        if (i1 != i2) {
+            QuakeEntry q1 = quakes.get(i1);
+            QuakeEntry q2 = quakes.get(i2);
+            quakes.set(i1, q2);
+            quakes.set(i2, q1);
+        }
     }
     
     /**
@@ -81,9 +83,8 @@ public class QuakeSortInPlace {
      */
     public void onePassBubbleSort(ArrayList<QuakeEntry> quakeData, int numSorted) {
         for (int i=0; i<quakeData.size()-numSorted-1; i++) {
-            int j = i + 1;
-            if (quakeData.get(i).getMagnitude() > quakeData.get(j).getMagnitude()) {
-                swapQuakes(quakeData, i, j);
+            if ((i+1<quakeData.size()) && (quakeData.get(i).getMagnitude() > quakeData.get(i+1).getMagnitude())) {
+                swapQuakes(quakeData, i, i+1);
             }
         }
     }
@@ -92,7 +93,7 @@ public class QuakeSortInPlace {
      * 
      */
     public void sortByMagnitudeWithBubbleSort(ArrayList<QuakeEntry> in) {
-        for (int i=0; i<in.size(); i++) {
+        for (int i=0; i<in.size()-1; i++) {
             onePassBubbleSort(in, i);
             System.out.println("Printing Quakes after pass " + i);
             printQuakes(in);
@@ -128,7 +129,7 @@ public class QuakeSortInPlace {
      * sortByMagnitudeWithBubbleSortWithCheck
      *   sort quakes with Bubble Sort, but if sorted already then break
      */
-    public void sortByMagnitudeWithBubbleSortWithCheck(ArrayList<QuakeEntry> in) {
+    public int sortByMagnitudeWithBubbleSortWithCheck(ArrayList<QuakeEntry> in) {
         int i;
         for (i=0; i<in.size(); i++) {
             if (checkInSortedOrder(in)) { break; }
@@ -136,13 +137,14 @@ public class QuakeSortInPlace {
             onePassBubbleSort(in, i);
         }
         System.out.println(i + " passes needed");
+        return i;
     }
     
     /**
      * sortByMagnitudeWithCheck 
      *   sort quakes with selection sort, but if already sorted then break
      */
-    public void sortByMagnitudeWithCheck(ArrayList<QuakeEntry> in) {   
+    public int sortByMagnitudeWithCheck(ArrayList<QuakeEntry> in) {   
         int i=0;
         for (i=0; i<in.size(); i++) {
             if (checkInSortedOrder(in)) { break; }
@@ -151,6 +153,7 @@ public class QuakeSortInPlace {
             swapQuakes(in, i, minIdx);
         }
         System.out.println(i + " passes needed.");
+        return i;
     }
     
     

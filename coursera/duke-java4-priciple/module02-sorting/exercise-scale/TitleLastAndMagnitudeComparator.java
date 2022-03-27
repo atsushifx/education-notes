@@ -30,7 +30,11 @@ public class TitleLastAndMagnitudeComparator implements Comparator<QuakeEntry> {
         if (diff != 0) {
             return diff;
         }
-        return Double.compare(qe1.getMagnitude(), qe2.getMagnitude());
+        diff = Double.compare(qe1.getMagnitude(), qe2.getMagnitude());
+        if (diff != 0) {
+            return diff;
+        }
+        return Double.compare(qe1.getDepth(), qe2.getDepth());
     }
 }
 
