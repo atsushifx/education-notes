@@ -24,20 +24,21 @@ public class DifferentSorters {
         }
     }
     
-    
+    /**
+     * sortWithCompareTo
+     *   sort quakes by compareTo method
+     */
     public void sortWithCompareTo() {
         EarthQuakeParser parser = new EarthQuakeParser();
-        String source = "data/nov20quakedata.atom";
+        // String source = "data/nov20quakedata.atom";
+        String source = "data/earthQuakeDataDec6sample1.atom";
+        
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
         ArrayList<QuakeEntry> list  = parser.read(source);
-        Collections.sort(list);
-        for(QuakeEntry qe: list) {
-            System.out.println(qe);
-        }
-        int quakeNumber = 10;
-        System.out.println("Print quake entry in position " + quakeNumber);
-        System.out.println(list.get(quakeNumber));
         
+        System.out.println("\n  q.1 - sort with compareTo");
+        Collections.sort(list);
+        printQuakes(list, 50);
         
     }
     
@@ -75,11 +76,14 @@ public class DifferentSorters {
      */
     public void sortByTitleAndDepth() {
         EarthQuakeParser parser = new EarthQuakeParser();
-        String source = "data/nov20quakedata.atom";
+        // String source = "data/nov20quakedata.atom";
+        String source = "data/earthQuakeDataDec6sample2.atom";
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
         ArrayList<QuakeEntry> list  = parser.read(source);
+        
+        System.out.println("q.2 - title & depth sort");
         Collections.sort(list, new TitleAndDepthComparator());
-        printQuakes(list, 10);
+        printQuakes(list, 50);
         
     }
     
@@ -90,14 +94,15 @@ public class DifferentSorters {
      */
     public void sortByLastWordInTitleThenByMagnitude() {
         EarthQuakeParser parser = new EarthQuakeParser();
-        String source = "data/nov20quakedata.atom";
-        
+        //String source = "data/nov20quakedata.atom";
+        String source = "data/earthQuakeDataDec6sample2.atom";
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
         ArrayList<QuakeEntry> list  = parser.read(source);
-        System.out.println("\n  sort by title & magnitude");
+        
+        System.out.println("\n q.3 - sort by title & magnitude");
         
         TitleLastAndMagnitudeComparator cp = new TitleLastAndMagnitudeComparator();
         Collections.sort(list, cp);
-        printQuakes(list, 10);
+        printQuakes(list, 50);
     }
 }
