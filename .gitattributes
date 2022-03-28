@@ -18,8 +18,8 @@
 #
 
 # sound file
-*.ogg filter=lfs diff=lfs merge=lfs binary
-*.mp3 filter=lfs diff=lfs merge=lfs binary
+*.ogg binary
+*.mp3 binary
 
 # graphics
 *.png -text
@@ -29,8 +29,8 @@
 *.webp -text
 
 # fonts
-*.ttf -text
-*.woff* -text
-*.eot -text
+*.ttf binary
+*.woff* binary
+*.eot binary
 
 
