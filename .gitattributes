@@ -9,10 +9,14 @@
 # Note that binary is a macro for -text -diff.
 ######################################################################
 * text=input
+
+
+
 ###
 #  Git LFS
 #   binary / non text and big size file
 #
+
 # sound file
 *.ogg filter=lfs diff=lfs merge=lfs binary
 *.mp3 filter=lfs diff=lfs merge=lfs binary
@@ -25,6 +29,8 @@
 *.webp filter=lfs diff=lfs merge=lfs -text
 
 # fonts
-*.ttf filter=lfs diff=lfs merge=lfs binary
-*.woff* filter=lfs diff=lfs merge=lfs binary
-*.eot filter=lfs diff=lfs merge=lfs binary
+*.ttf filter=lfs diff=lfs merge=lfs -text
+*.woff* filter=lfs diff=lfs merge=lfs -text
+*.eot filter=lfs diff=lfs merge=lfs -text
+
+
