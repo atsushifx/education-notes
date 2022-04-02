@@ -8,54 +8,7 @@ import java.util.*;
  * @author  Furukawa, Atsushi
  * @version 1.0.0
  */
-public class MarkovFour implements IMarkovModel 
-{
-    private String myText = null;
-    private Random myRandom;
-    
-    /**
-     * constructor
-     */
-    public MarkovFour() {
-        myRandom = new Random();
-    }
-    
-    /**
-     * set random
-     *   set Random seed
-     */
-    public void setRandom(int seed){
-        myRandom = new Random(seed);
-    }
-    
-    /**
-     * setTraining
-     *   training text for markov model
-     */
-    public void setTraining(String s){
-        myText = s.trim();
-    }
-
-    // Markov model
-    /**
-     * getFollows
-     *   create follow character List for string key
-     */
-    public ArrayList<String> getFollows(String key) {
-        ArrayList<String> follows = new ArrayList<String>();
-        int mlen = 4;
-        int index = 0;
-        while (index < myText.length()) {
-            int spos = myText.indexOf(key, index);
-            if (spos < 0)   break;
-            spos += mlen;
-            if (spos >= myText.length()) break;
-            follows.add(myText.substring(spos, spos+1));
-            index = spos;
-        }
-        return follows;
-    }
-    
+public class MarkovFour extends AbstractMarkovModel {   
     /**
      * getRandomText
      *   generate random text with markov model
@@ -74,6 +27,7 @@ public class MarkovFour implements IMarkovModel
         // next to end
         for(int k=mlen; k < numChars; k++) {
             ArrayList<String> follows = getFollows(key);
+            if (follows.size() <= 0)  break;
             String ch = follows.get(myRandom.nextInt(follows.size()));
             sb.append(ch);
             key = key.substring(1) + ch;

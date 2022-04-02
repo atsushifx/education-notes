@@ -7,56 +7,20 @@ import java.util.*;
  * @author  Furukawa, Atsushi
  * @version 1.0.0
  */
-public class MarkovModel implements IMarkovModel
-{
+public class MarkovModel extends AbstractMarkovModel {
+    
     // property
-    private String myText = null;
-    private Random myRandom;
     private int myMarkov;
     
     /**
      * constructor
      */
     public MarkovModel(int n) {
-        myRandom = new Random();
+        super();
         myMarkov = n;
     }
     
-    /**
-     * set random
-     *   set Random seed
-     */
-    public void setRandom(int seed){
-        myRandom = new Random(seed);
-    }
-    
-    /**
-     * setTraining
-     *   training text for markov model
-     */
-    public void setTraining(String s){
-        myText = s.trim();
-    }
-
-    // Markov model
-    /**
-     * getFollows
-     *   create follow character List for string key
-     */
-    public ArrayList<String> getFollows(String key) {
-        ArrayList<String> follows = new ArrayList<String>();
-        int index = 0;
-        while (index < myText.length()) {
-            int spos = myText.indexOf(key, index);
-            if (spos < 0)   break;
-            spos += myMarkov;
-            if (spos >= myText.length()) break;
-            follows.add(myText.substring(spos, spos+1));
-            index = spos;
-        }
-        return follows;
-    }
-    
+    // Markov mode
     /**
      * getRandomText
      *   generate random text with markov model
@@ -69,12 +33,17 @@ public class MarkovModel implements IMarkovModel
         
         // first string
         int i = myRandom.nextInt(myText.length()-myMarkov);
-        String key = myText.substring(i, i+myMarkov);
+        String key = myText.substring(i, i + myMarkov);
         sb.append(key);
+        
         // next to end
         for(int k=myMarkov; k<numChars; k++) {
-            ArrayList<String> follows = getFollows(key);
-            String ch = follows.get(myRandom.nextInt(follows.size()));
+            ArrayList<String> follows = getFollows(key);    
+            if (follows.isEmpty()) {
+                break;
+            }
+            int index = myRandom.nextInt(follows.size());
+            String ch = follows.get(index);
             sb.append(ch);
             key = key.substring(1) + ch;
         }            

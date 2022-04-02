@@ -7,26 +7,7 @@ import java.util.*;
  * @author  Furukawa, Atsushi
  * @version 1.0.0
  */
-public class MarkovOne implements IMarkovModel
-{
-    private String myText = null;
-    private Random myRandom;
-    
-    /**
-     * constructor
-     */
-    public MarkovOne() {
-        myRandom = new Random();
-    }
-    
-    public void setRandom(int seed){
-        myRandom = new Random(seed);
-    }
-    
-    public void setTraining(String s){
-        myText = s.trim();
-    }
-    
+public class MarkovOne extends AbstractMarkovModel {
     /**
      * getRandomText
      *   generate random text with markov model
@@ -46,23 +27,5 @@ public class MarkovOne implements IMarkovModel
             key = ch;
         }            
         return sb.toString();
-    }
-    
-    // Markov model
-    /**
-     * getFollows
-     *   create follow character List for string key
-     */
-    public ArrayList<String> getFollows(String key) {
-        ArrayList<String> follows = new ArrayList<String>();
-        int index = 0;
-        while (index < myText.length()) {
-            int spos = myText.indexOf(key, index);
-            if (spos < 0)   break;
-            if (++spos >= myText.length()) break;
-            follows.add(myText.substring(spos, spos+1));
-            index = spos;
-        }
-        return follows;
     }
 }

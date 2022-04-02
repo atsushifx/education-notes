@@ -49,9 +49,9 @@ public class MarkovModel
         while (index < myText.length()) {
             int spos = myText.indexOf(key, index);
             if (spos < 0)   break;
-            spos += myMarkov;
-            if (spos >= myText.length()) break;
-            follows.add(myText.substring(spos, spos+1));
+            int pos2 =  spos + key.length();
+            if (pos2 >= myText.length()) break;
+            follows.add(myText.substring(pos2, pos2+1));
             index = spos;
         }
         return follows;

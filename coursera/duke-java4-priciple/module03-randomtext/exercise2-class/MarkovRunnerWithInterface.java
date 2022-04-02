@@ -38,7 +38,7 @@ public class MarkovRunnerWithInterface {
         
         MarkovFour mFour = new MarkovFour();
         runModel(mFour, st, size);
-        
+
     }
     
     /**

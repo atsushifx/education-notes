@@ -43,13 +43,12 @@ public class MarkovFour
      */
     public ArrayList<String> getFollows(String key) {
         ArrayList<String> follows = new ArrayList<String>();
-        int mlen = 4;
         int index = 0;
         while (index < myText.length()) {
             int spos = myText.indexOf(key, index);
             if (spos < 0)   break;
-            spos += mlen;
-            if (spos >= myText.length()) break;
+            int pos2 = spos + key.length();
+            if (pos2 >= myText.length()) break;
             follows.add(myText.substring(spos, spos+1));
             index = spos;
         }
