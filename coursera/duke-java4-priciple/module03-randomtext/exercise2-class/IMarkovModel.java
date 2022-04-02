@@ -9,6 +9,12 @@
 public interface IMarkovModel {
     public void setTraining(String text);
     
-    public String getRandomText(int numChars);
+    /**
+     * setRandom
+     *   set random seed to myRandom
+     *   
+     */
+    public void setRandom(int seed);
     
+    public String getRandomText(int numChars);
 }

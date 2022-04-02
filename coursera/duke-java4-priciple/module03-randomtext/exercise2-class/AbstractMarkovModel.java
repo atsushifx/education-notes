@@ -26,6 +26,15 @@ public abstract class AbstractMarkovModel implements IMarkovModel {
     public void setTraining(String s) {
         myText = s.trim();
     }
+ 
+    /**
+     * setRandom
+     *   set random seed to myRandom
+     *   
+     */
+    public void setRandom(int seed) {
+        myRandom.setSeed(seed);
+    }
     
     /**
      * getRandomText
@@ -51,5 +60,12 @@ public abstract class AbstractMarkovModel implements IMarkovModel {
         }
         return follows;
     }
-
+    
+    /**
+     * toStringwithOrder
+     *   super method for toString
+     */
+    protected String toStringwithOrder(Integer order) {
+        return "MarkovModel of order " + order.toString();
+    }
 }

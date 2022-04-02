@@ -49,4 +49,12 @@ public class MarkovModel extends AbstractMarkovModel {
         }            
         return sb.toString();
     }
+    
+    /**
+     * toString
+     */
+    public String toString() {
+        return toStringwithOrder(myMarkov);
+    }
+
 }

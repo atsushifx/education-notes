@@ -29,4 +29,11 @@ public class MarkovZero extends AbstractMarkovModel {
         
         return sb.toString();
     }
+    
+    /**
+     * toString
+     */
+    public String toString() {
+        return toStringwithOrder(0);
+    }
 }

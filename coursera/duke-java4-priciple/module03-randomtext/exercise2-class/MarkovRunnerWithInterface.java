@@ -12,13 +12,17 @@ public class MarkovRunnerWithInterface {
      * runModel
      *   generate and printout text
      */
-    public void runModel(IMarkovModel markov, String text, int size) {
+    public long runModel(IMarkovModel markov, String text, int size) {
         markov.setTraining(text);
+        // markov.setRandom(218);
         System.out.println("running with " + markov);
+        long startTime = System.nanoTime();
         for(int k=0; k < 3; k++){
             String st= markov.getRandomText(size);
             printOut(st);
         }
+        long endTime = System.nanoTime();
+        return endTime - startTime;
     }
     
     public void runMarkov() {
@@ -40,6 +44,53 @@ public class MarkovRunnerWithInterface {
         runModel(mFour, st, size);
 
     }
+    
+    /**
+     * testHashMap
+     */
+    public void testHashMap() {
+        EfficientMarkovModel markov = new EfficientMarkovModel(2);
+        
+        // 
+        String trainingText = "yes-this-is-a-thin-pretty-pink-thistle";
+        markov.setTraining(trainingText);
+        markov.buildMap();
+        int size = 50;
+        markov.setRandom(42);
+        
+        System.out.println("running with " + markov);
+        String st= markov.getRandomText(size);
+        printOut(st);
+    }
+    
+    /**
+     * compareMethod
+     *   test speed of Markov method
+     */
+    public void compareMethod() {
+        String file = "data/hawthorne.txt";
+        FileResource fr = new FileResource(file);
+        String st = fr.asString().replace('\n', ' ');
+        int size = 1000;
+        
+        // Normal Markov
+        MarkovModel m1 = new MarkovModel(2);
+        m1.setRandom(42);
+        long t1 = runModel(m1, st, size);
+        
+        // Normal Markov
+        EfficientMarkovModel m2 = new EfficientMarkovModel(2);
+        m2.setRandom(42);
+        long t2 = runModel(m2, st, size);
+        
+        double ntos = 1000000000d;
+        
+        // speed check
+        System.out.println("\n -- markov speed --");
+        System.out.println("Normal markov    : " + ((double)t1 / ntos) + " seconds");
+        System.out.println("Efficient markov : " + ((double)t2 / ntos) + " seconds");
+    }
+    
     
     /**
      * printout
