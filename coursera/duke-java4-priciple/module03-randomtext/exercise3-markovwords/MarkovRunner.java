@@ -56,10 +56,13 @@ public class MarkovRunner {
         String st = fr.asString().replace('\n', ' ');
         
         MarkovWordTwo markovWord = new MarkovWordTwo();
-        markovWord.setRandom(549);
-        runModel(markovWord, st, 120);
+        runModel(markovWord, st, 120, 549);
     } 
-    
+
+    /**
+     * printOut
+     *   print out genetated text
+     */
     private void printOut(String s){
         String[] words = s.split("\\s+");
         int psize = 0;
@@ -75,4 +78,12 @@ public class MarkovRunner {
         System.out.println("\n----------------------------------");
     } 
 
+    /**
+     * testIndexOf
+     *   test IndexOf method in MarkovWordOne
+     */
+    public void testIndexOf() {
+        MarkovWordOne mark = new MarkovWordOne();
+        mark.testIndexOf();
+    }
 }
