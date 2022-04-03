@@ -49,8 +49,8 @@ public class MarkovFour
             if (spos < 0)   break;
             int pos2 = spos + key.length();
             if (pos2 >= myText.length()) break;
-            follows.add(myText.substring(spos, spos+1));
-            index = spos;
+            follows.add(myText.substring(pos2, pos2+1));
+            index = spos + 1;
         }
         return follows;
     }

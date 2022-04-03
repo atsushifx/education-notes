@@ -5,8 +5,8 @@ import edu.duke.*;
  * examination1
  *   get answer for examinmation random text
  * 
- * @author (あなたの名前)
- * @version (バージョン番号もしくは日付)
+ * @author  Furukawa, Atsushi
+ * @version 1.0.0
  */
 public class examination1
 {

@@ -8,7 +8,7 @@ import edu.duke.*;
  * @author  Furukawa, Atsushi
  * @versionq1.0.0
  */
-public class examine {
+public class examine1 {
     /**
      * exam1
      *   q.3 - 

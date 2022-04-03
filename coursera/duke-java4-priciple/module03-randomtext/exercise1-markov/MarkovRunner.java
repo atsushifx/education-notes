@@ -52,14 +52,13 @@ public class MarkovRunner {
         
         // training
         FileResource fr = new FileResource();
-        String st = fr.asString();
-        st = st.replace('\n', ' ');
+        String st = fr.asString().replace('\n', ' ');
         markov.setTraining(st);
         
         // generate
-        markov.setRandom(25);
-        for(int k=0; k < 3; k++){
-            String text = markov.getRandomText(500);
+        markov.setRandom(715);
+        for(int k=0; k < 1; k++){
+            String text = markov.getRandomText(200);
             printOut(text);
         }   
  
@@ -92,7 +91,7 @@ public class MarkovRunner {
      * printout
      *   printout generate text
      */
-    private void printOut(String s){
+    public void printOut(String s){
         String[] words = s.split("\\s+");
         int psize = 0;
         System.out.println("----------------------------------");

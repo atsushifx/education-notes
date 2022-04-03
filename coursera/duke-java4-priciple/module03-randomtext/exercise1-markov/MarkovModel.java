@@ -52,7 +52,7 @@ public class MarkovModel
             int pos2 =  spos + key.length();
             if (pos2 >= myText.length()) break;
             follows.add(myText.substring(pos2, pos2+1));
-            index = spos;
+            index = spos + 1;
         }
         return follows;
     }

@@ -114,7 +114,7 @@ public class EfficientMarkovModel extends AbstractMarkovModel {
      */
     public void printHashMapInfo() {
         System.out.println("\n  -- markov cache info --");
-        if (false) {
+        if (myMarkovCache.size() < 10) {
             for(String key: myMarkovCache.keySet()){
                 System.out.println(key + " : " + myMarkovCache.get(key));
             }
