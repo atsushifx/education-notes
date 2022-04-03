@@ -29,7 +29,7 @@ public class EfficientMarkovWord implements IMarkovModel {
     public void setTraining(String text) {
         myText = text.replace('\n', ' ').split("\\s+");
         buildMap();
-        // printHashMapInfo();
+        printHashMapInfo();
     }
     
     public String getRandomText(int numWords){
@@ -147,7 +147,7 @@ public class EfficientMarkovWord implements IMarkovModel {
         }
         System.out.println("number of keys\t: " + myMap.size());
         System.out.println("largest value\t: " + getLargestValue());
-        System.out.println("largest keys\t:" + getLargestKeys());
+        System.out.println("largest keys\t: " + getLargestKeys());
         System.out.println("\n");
     }
     
