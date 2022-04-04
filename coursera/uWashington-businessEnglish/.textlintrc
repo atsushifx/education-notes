@@ -7,8 +7,9 @@
   "rules": {
     "ginger": {
       "skipPatterns": [
-        "js",
-        "dev"
+        "js.dev",
+        "dev",
+        "(",
       ]
     },
     "write-good": {
@@ -21,9 +22,12 @@
       "skipPatterns": [
         "Atsushi",
         "Furukawa",
-        "Willan",
+        "AGLA",
+        "gmail.com",
         "js.dev",
-        "IJ"
+        "IJ",
+        "Ok",
+        /\d+/g
       ]
     },
     "@proofdict/proofdict": {
