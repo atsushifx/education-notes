@@ -9,7 +9,7 @@
       "skipPatterns": [
         "js.dev",
         "dev",
-        "(",
+        "("
       ]
     },
     "write-good": {
@@ -20,14 +20,16 @@
     "common-misspellings": {},
     "spelling": {
       "skipPatterns": [
+        /\d+/g,
         "Atsushi",
         "Furukawa",
-        "AGLA",
+        /AGLA/i,
+        /aglabo/i,
         "gmail.com",
         "js.dev",
         "IJ",
         "Ok",
-        /\d+/g
+        /Filson/i
       ]
     },
     "@proofdict/proofdict": {
