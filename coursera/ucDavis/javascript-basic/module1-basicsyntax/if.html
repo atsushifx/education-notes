@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>javascript: else if</title>
+</head>
+<body>
+  <h1>javaScript: if </h1>
+  <h2>switch, case</h2>
+  <script type="text/javascript">
+    const colors = ['red', 'green', 'blue', 'yellow', 'purple'];
+    let select = colors[1];
+    /*
+    console.log('select color:', select);
+    switch (select) {
+    case 'red':
+      console.log('color is: red');
+      break
+    case 'green':
+      console.log("color is: green"); 
+      breaj;    
+    case 'blue':
+      console.log("color is: blue");
+      break;
+    case "yellow":
+      console.log("color is: yellow");
+      break;
+    default:
+      console.log('no color select');
+      break;
+    }
+    */
+
+  </script>
+
+  <h2>&&</h2>
+  <script>
+    var goodMood = true;
+    var gotSleep = undefined;
+    
+    console.log("goodMood:"+goodMood, "gotSleep:"+gotSleep);
+    if (goodMood && gotSleep) {
+      console.log('Today is a good day');
+    } else {
+      console.log("I am grunpy");
+    }
+    
+    
+    console.log('sample of or (||)');
+    var getBreakfast = true;
+    var getLunch;
+    var getDinner = false;
+
+    console.log("Breakfast:", getBreakfast, " Lunch:", getLunch, " Dinner:", getDinner);
+    if (getBreakfast||getLunch||getDinner) {
+      console.log("things are ok");
+    } else {
+      console.log("STARVING!!");
+    }
+
+
+  </script>
+</body>
+</html>
