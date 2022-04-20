@@ -6,5 +6,5 @@
 	"textlint.autoFixOnSave": true,
 	"textlint.configPath": ".textlintrc",
 	"textlint.trace": "",
-	"textlint.nodePath": "C:/Users/atsushifx/AppData/Roaming/npm/pnpm-global/5/node_modules",
+	"textlint.nodePath": "C:/Users/atsushifx/AppData/Roaming/npm/pnpm-global/5/node_modules/.pnpm",
 }

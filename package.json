@@ -9,14 +9,13 @@
   },
   "author": "Furukawa, Atsushi <atsushifx@gmail.com>",
   "license": "MIT",
+  "dependencies": {
+  },
   "bugs": {
     "url": "https://github.com/atsushifx/education-notes/issues"
   },
   "homepage": "https://github.com/atsushifx/education-notes#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "tsc": "^2.0.4"
   }
 }

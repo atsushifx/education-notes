@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loops in JS</title>
+</head>
+<body>
+  <h1>Loops in JavaScript</h1>
+  <script>
+    var colors = [ "black", "red", "blue", "yellow", "green", "purple"]
+    /*
+    for (i=0; i<=colors.length; i++) {
+      console.log("colors["+i+"] = ", colors[i]);
+    }
+    */
+   /*
+    var foods = [ "水餃子", "ご飯", "味噌汁", "酢の物"];
+
+    for (var eachFood of foods) {
+      console.log(eachFood);
+    }
+  */
+    /*""
+    const strArr = "text use as Array.";
+
+    for (var l of strArr) {
+      console.log(l);
+    }
+    */
+
+    let i = 0;
+    let text = "";
+    while ( i <= 10 ) {
+      text += `i is now: ${i} , i*i=${i*i} \n`;
+      i++;
+    }
+    console.log(text);
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js in structured programming</title>
+</head>
+<body>
+  <h1>Structured programming</h1>
+  <script>
+    let myString = "I am really hungly for some";
+    
+    // string 強調
+    
+    let key = "really";
+    let index = myString.search(key);
+
+    // console.log('found:', index);
+    
+    let specialWord = myString.substr(index, 6).toUpperCase();
+    // console.log("Special:", specialWord);
+
+    let myNewStr = myString.replace(key, specialWord);
+    console.log(myString, " ⇒ ", myNewStr);
+    
+    // eat some foods
+    //const foods = [ "チーズトースト", "ヨーグルト", "バナナスムージー", "コーヒー"];
+    const foods = [ "cheeze", "applepie", "lunch", "breakfast", "coffee"]
+
+    for (let i=0; i<foods.length; i++) {
+      if ((i%2) === 0) {  // even
+        console.log(`${myNewStr} ${foods[i].toUpperCase()}`);
+      } else { // odd
+        console.log(`${myNewStr} ${foods[i]}`);
+   
+      }
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Basics</title>
+</head>
+<body>
+  <h1>JavaScript basic challenges</h1>
+  <h2>Challenge 1</h2>
+  <script>
+    const firstName = "Bill";
+    const lastName  = "Mead";
+    console.log(firstName);
+    console.log(lastName);
+  </script>
+
+  <h2>Challenge 2</h2>
+  <script>
+    console.log(firstName + " " + lastName);
+  </script>
+
+  <h2>Challenge 3</h2>
+  <script>
+    const adjective = "tall";
+    console.log("We know about " + firstName + " " + lastName + " is very " + adjective);
+  </script>
+
+  <h2>Challenge 4</h2>
+  <script>
+    /*
+    let name = prompt("Your name?", "Atsushi");
+    console.log("Hello "+name+", and welcome.");
+    */
+  </script>
+ 
+  <h2>Challenge 5</h2>
+  <script>
+  /*
+    let num = prompt("Input Numbrt?", 8);
+    if (num < 10 ) {
+      console.log("10より小さい");
+    } else {
+      console.log("大きな数だ");
+    }
+  */
+  </script>
+
+  <h2>Challenge 6</h2>
+  <script>
+    /*
+    let num = prompt("Input Numbrt?", 8);
+    if (num < 10 ) {
+      console.log("10より小さい");
+    } else if (num >= 10) {
+      console.log("大きな数だ");
+    } else {
+      console.log("ERROR: not number")
+    }
+  */
+  </script>
+
+  <h2>Challenge 7</h2>
+  <script>
+    /*
+    let num = prompt("Input Numbrt?", 8);
+    if (num < 10 ) {
+      console.log("10より小さい");
+      for (let i=0; i<10; i++) {
+        console.log(i);
+      }
+    } else if (num >= 10) {
+      console.log("大きな数だ");
+    } else {
+      console.log("ERROR: not number")
+    }
+    */
+  </script>
+
+  <h2>Challenge 8</h2>
+  <script>
+    /*
+    let num3 = prompt("Input Numbrt?", 6);
+    if (num3 < 10 ) {
+      console.log(num3, "は10より小さい");
+      for (let i=0; i<10; i++) {
+        if (i == num3) {
+          console.log(i, "<- entered number here");
+        } else {
+          console.log(i);
+        }
+      }
+    } else if (num3 >= 10) {
+      console.log("大きな数だ");
+    } else {
+      console.log("ERROR: not number")
+    }
+    */
+  </script>
+
+  <h2>Bonus Challenge</h2>
+  <script>
+    let pickedColor = prompt("input color");
+
+    if (pickedColor==="red" || pickedColor=="blue" || pickedColor==="yellow") {
+      console.log("primary color: ", pickedColor);
+    } else if (pickedColor==="orange" || pickedColor==="green" || pickedColor==="purple") {
+      console.log("secondary: ", pickedColor);
+    } else {
+      console.log("others: ", pickedColor);
+    }
+
+  </script>
+</body>
+</html>
