@@ -20,21 +20,17 @@
     "common-misspellings": {},
     "spelling": {
       "skipPatterns": [
-        /\d+/g,
         "Atsushi",
         "Furukawa",
-        /AGLA/i,
-        /aglabo/i,
         "gmail.com",
         "js.dev",
-        "IJ",
-        "Ok",
-        /Filson/i
+        "/Filson/i"
       ]
     },
     "@proofdict/proofdict": {
       "dictURL": "https://atsushifx.github.io/proof-dictionary/"
     },
-    "@textlint-rule/no-unmatched-pair": true
+    "@textlint-rule/no-unmatched-pair": true,
+    "no-mixed-zenkaku-and-hankaku-alphabet": true
   }
 }
