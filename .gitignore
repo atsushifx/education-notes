@@ -22,9 +22,6 @@ $~*
 !.vscode/*.code-snippets
 
 
-### vagrant
-## for linux command line education
-
 # General
 # Log files (if you are creating logs in debug mode, uncomment this)
 *.log
@@ -114,6 +111,11 @@ web_modules/
 
 # Optional npm cache directory
 .npm
+.cache
+
+# json lock
+*lock.*
+
 
 # Optional eslint cache
 .eslintcache

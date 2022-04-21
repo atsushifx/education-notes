@@ -1,0 +1,16 @@
+{
+  "name": "git-test",
+  "version": "0.1.0",
+  "description": "git & nodejs basic sample",
+  "main": "index.html",
+  "scripts": {
+    "start": "pnpm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "author": "Furukawa, Atsushi <atsushifx@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
