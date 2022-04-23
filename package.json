@@ -9,7 +9,6 @@
   },
   "author": "Furukawa, Atsushi <atsushifx@gmail.com>",
   "license": "MIT",
-  "dependencies": {},
   "bugs": {
     "url": "https://github.com/atsushifx/education-notes/issues"
   },
@@ -20,5 +19,11 @@
   "volta": {
     "node": "18.0.0",
     "npm": "8.7.0"
+  },
+  "devDependencies": {
+    "create-react-app": "^5.0.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3"
   }
 }
