@@ -1,0 +1,84 @@
+/**
+ * wish list: default custmize
+ *
+ */
+
+h1,
+h2,
+h3,
+h3,
+h5,
+h6,
+ul,
+li,
+p {
+    margin: auto;
+    margin-bottom: 1em;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
+    color: #333;
+}
+
+
+/*page customize*/
+
+header {
+    padding: 50px;
+    margin-bottom: 20ox;
+    background-color: cornflowerblue;
+    text-justify: center;
+    color: while;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+main form {
+    width: 40%;
+}
+
+main article {
+    width: 45%;
+}
+
+#title {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: .5em;
+}
+
+input,
+textarea,
+form input,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+    border: thin solid #666;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.card {
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #efefef;
+    border-radius: 5px;
+}
+
+.card-body {}
