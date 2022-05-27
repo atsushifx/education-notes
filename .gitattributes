@@ -33,4 +33,6 @@
 *.woff* binary
 *.eot binary
 
+# library
+*.jar	binary
 
