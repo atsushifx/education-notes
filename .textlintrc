@@ -1,0 +1,30 @@
+{
+  "filters": {
+    "allowlist": [
+      ".textlint/allowlist.yml"
+    ]
+  },
+  "rules": {
+    "ginger": {
+      "skipPatterns": []
+    },
+    "write-good": {
+      "passive": true,
+      "thereIs": true,
+      "adverb": true
+    },
+    "common-misspellings": {},
+    "spelling": {
+      "language": "en",
+      "skipPatterns": [],
+      "suggestCorrections": true
+    },
+    "terminology": {
+      "defaultTerms": true
+    },
+    "@proofdict/proofdict": {
+      "dictURL": "https://atsushifx.github.io/proof-dictionary/"
+    },
+    "@textlint-rule/no-unmatched-pair": true
+  }
+}
