@@ -11,8 +11,6 @@ import de.fhpotsdam.unfolding.marker.SimplePointMarker;
 import de.fhpotsdam.unfolding.providers.MBTilesMapProvider;
 import de.fhpotsdam.unfolding.providers.OpenStreetMap;
 import de.fhpotsdam.unfolding.utils.MapUtils;
-//Parsing library
-import parsing.ParseFeed;
 //Processing library
 import processing.core.PApplet;
 
