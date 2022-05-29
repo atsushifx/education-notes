@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>module4-eqmap2</name>
+	<name>module5-eqmap3</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -18,12 +18,12 @@
 		<link>
 			<name>data</name>
 			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/data</locationURI>
+			<location>C:/Users/atsushifx/workspaces/education/education-notes/coursera/ucSanDiego/OOPinJava/data</location>
 		</link>
 		<link>
 			<name>parsing</name>
 			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/parsing</locationURI>
+			<location>C:/Users/atsushifx/workspaces/education/education-notes/coursera/ucSanDiego/OOPinJava/parsing</location>
 		</link>
 	</linkedResources>
 </projectDescription>
