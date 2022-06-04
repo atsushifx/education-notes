@@ -36,3 +36,6 @@
 # library
 *.jar	binary
 
+# documents (bibary formats)
+*.pdf	binay
+
