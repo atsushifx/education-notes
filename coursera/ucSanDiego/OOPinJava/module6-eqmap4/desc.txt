@@ -1,0 +1,64 @@
+about my applicayion.
+
+
+In basic requires, about sort and print. I use Float's compareTo method with getMagnitude.
+
+about my code.
+
+- AirportMarker [class]
+  for my own extension: (airport marker). add this class to use with EarthquakeCityMap.
+  add toString and showTitle method to display title on mouse overed,
+
+- EarthquakeMarker [class]
+  Implements comparable interface and compareTo method for sort earthquake data.
+
+
+- EarthquakeCityMap [class]
+  modeiy this class using my module 5's earthquakeCityMap to program is simple.7
+
+- setup [method]
+  add Aitports marker and routes marker
+  call sortAndPrint by requirements.
+
+- getRouteMarkers [method]
+  this method used by setup to make routesMarker.
+
+- mousemoved
+  for Airport markers, call method if mouse is on the air port marker.
+
+
+- mouseclicked
+  add code that clicked airports marker is display routes markers use clicked airport.
+  
+- dispRouteifClicked [method]
+  display or hide routes marker main.
+  if airport marker is selected display routes marker, otherwise hide them.
+
+- getSelectedMarker [method]
+  check mouse cursor is on the marker. 
+
+- hideMarkers [method]
+  hide markers if mouse cliked marker.
+  if marker is mouse cliked one, this is not hide.
+
+- hideQuakeMarker [method]
+  hide earthquake markers if this earthquakke does not effect city.
+
+- hideCityMarkers [method]
+  hide city markers that these are not affected by earthquake.
+
+- unhideMarkers [method]
+  display all quake and city markers.
+
+- dispRouteswithPort [method]
+  display route markers if these routes use parameter's airport.
+
+- hideAllRoutes
+  hide all route markers.
+
+- sortAndPrint [method]
+  sort eartquake markers reverse ordered by magnitude (bigger to smaller).
+  print magnitude and earthquake title.
+
+
+

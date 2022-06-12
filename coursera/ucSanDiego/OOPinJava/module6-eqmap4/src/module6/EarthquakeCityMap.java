@@ -241,12 +241,11 @@ public class EarthquakeCityMap extends PApplet {
 	 */
 	@Override
 	public void mouseClicked() {
-		AirportMarker airport = dispRoueifClickedr();
+		AirportMarker airport = dispRouteifClicked();
 
 		if (lastClicked != null) {
 			unhideMarkers();
 			lastClicked = airport;
-			;
 		} else {
 			CommonMarker m1 = getSelectedMarker(quakeMarkers);
 			if (m1 != null) {
@@ -263,7 +262,7 @@ public class EarthquakeCityMap extends PApplet {
 		}
 	}
 
-	private AirportMarker dispRoueifClickedr() {
+	private AirportMarker dispRouteifClicked() {
 		AirportMarker airport = (AirportMarker) getSelectedMarker(this.airportList);
 
 		if (airport != null) {
