@@ -25,7 +25,6 @@ class CustomStringTest {
 		this.myCustomString.setString("hello");
 		assertEquals("hello", this.myCustomString.getString());
 
-		// TODO write at least 3 additional test cases
 		this.myCustomString.setString(null);
 		assertNull(this.myCustomString.getString(), "set null in myCustomString");
 
@@ -48,7 +47,6 @@ class CustomStringTest {
 		assertEquals("Good-bye!", this.myCustomString.getString());
 		assertTrue(this.myCustomString.isSet, "set string");
 
-		// TODO write at least 3 additional test cases
 		this.myCustomString.setString(null);
 		assertNull(this.myCustomString.getString(), "set string to null");
 		assertFalse(this.myCustomString.isSet, "strinf not set");
@@ -67,7 +65,6 @@ class CustomStringTest {
 		this.myCustomString.setString("my lucky numbers are 6, 8, and 19.");
 		assertEquals("my lucky numbes e 6, 8, nd 19.", this.myCustomString.remove("ra6"));
 
-		// TODO write at least 3 additional test cases
 		this.myCustomString.setString("");
 		assertEquals("", this.myCustomString.remove(""));
 
@@ -86,7 +83,6 @@ class CustomStringTest {
 		this.myCustomString.setString("abc, XYZ; 123.");
 		assertEquals("aBC, xyz; 123.", this.myCustomString.reverse("bcdxyz@3210."));
 
-		// TODO write at least 3 additional test cases
 		assertEquals("abc, XYZ; 123.", this.myCustomString.reverse(null));
 		assertEquals("abc, XYZ; 123.", this.myCustomString.reverse(""));
 		assertEquals("ABC, XYZ; 123.", this.myCustomString.reverse("ABC"));
