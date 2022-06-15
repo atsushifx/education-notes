@@ -97,7 +97,7 @@ public class EarthquakeCityMap extends PApplet {
 		} else {
 			map = new UnfoldingMap(this, 200, 50, 650, 600, new OpenStreetMap.OpenStreetMapProvider());
 			// IF YOU WANT TO TEST WITH A LOCAL FILE, uncomment the next line
-			// earthquakesURL = "2.5_week.atom";
+			earthquakesURL = "all_month.atom";
 		}
 		MapUtils.createDefaultEventDispatcher(this, map);
 
@@ -147,8 +147,9 @@ public class EarthquakeCityMap extends PApplet {
 			int id = Integer.parseInt(feature.getId());
 			m.setId(feature.getId());
 			m.setRadius(5);
-			airportList.add(m);
-			airports.put(id, feature.getLocation());
+
+			// airportList.add(m);
+			// airports.put(id, feature.getLocation());
 		}
 
 		// create route markers
