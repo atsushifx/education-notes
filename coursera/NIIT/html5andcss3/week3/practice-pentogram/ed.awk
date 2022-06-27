@@ -12,7 +12,7 @@ function getfont(line) {
 
 /<p>/{
   if ($0 ~ /Almost/) {
-    gsub("<p>", "<p style=\"font-family: " font ";\">", $0)
+    gsub("<p>", "<p style=\"font-family: '" font "';\">", $0)
   } else {
     font = getfont($0)
     class = font
