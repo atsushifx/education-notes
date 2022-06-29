@@ -15,6 +15,8 @@ function getfont(line) {
     gsub("<p>", "<p style=\"font-family: '" font "';\">", $0)
   } else {
     font = getfont($0)
+    if (font ~ /(\.#)/ ) print font
+
     class = font
     gsub(" ", "", class)
     class=tolower("font-" class)
@@ -24,5 +26,5 @@ function getfont(line) {
 
 # print all line
 {
-  print
+#  print
 }

@@ -13,21 +13,24 @@
 #  Git LFS
 #   binary / non text and big size file
 #
-# documents (bibary formats)
+# documents (binary formats)
 *.pdf binay
+
 # sound file
 *.ogg binary
 *.mp3 binary
+
 # graphics
 *.png -text
 *.jpeg -text
 *.jpg -text
 *.gif -text
 *.webp -text
+
 # fonts
 *.ttf binary
 *.woff* binary
 *.eot binary
 # library
 *.jar binary
-coursera/NIIT/html5andcss3/week3/practice-pentogram/Pentogram-Font-Catalog-Preview.pdf filter=lfs diff=lfs merge=lfs -text
+
