@@ -10,33 +10,30 @@
 ######################################################################
 * text=input
 
-
 ###
 #  Git LFS
 #   binary / non text and big size file
 
-
 #
 # documents (bibary formats)
-*.pdf   -text
+*.pdf binay
 
 # sound file
-*.ogg   -text
+*.ogg -text
 *.mp3 binary
 
 # graphics
-*.png   -text
-*.jpeg  -text
-*.jpg   -text
-*.gif   -text
-*.webp  -text
+*.png -text
+*.jpeg -text
+*.jpg -text
+*.gif -text
+*.webp -text
 
 # fonts
-*.ttf   binary
+*.ttf binary
 *.woff* binary
-*.eot   binary
+*.eot binary
 
 # library / programming
-*.sml   text
-*.jar   binary
-
+*.sml text
+*.jar binary
