@@ -1,8 +1,0 @@
-{
-    "errors": [
-        {
-            "keywords": ["moveleft", "MoveLeft", "moveright", "MoveRight", "MoveUp", "moveup", "MoveDown", "movedown"],
-            "response": "Remember that all programming commands are cap-sensitive. A common convention, called cammelCase, involves starting with a lowercase letter and then using capital letters to distinguish new words instead of spaces. For example, the command `moveLeft();` will move one square to the left, but `MoveLeft();` or `moveleft();` will both fail."
-        }
-    ] 
-}

@@ -18,12 +18,12 @@
 		<link>
 			<name>data</name>
 			<type>2</type>
-			<location>C:/Users/atsushifx/workspaces/education/education-notes/coursera/ucSanDiego/OOPinJava/data</location>
+			<locationURI>PARENT-1-PROJECT_LOC/data</locationURI>
 		</link>
 		<link>
 			<name>parsing</name>
 			<type>2</type>
-			<location>C:/Users/atsushifx/workspaces/education/education-notes/coursera/ucSanDiego/OOPinJava/parsing</location>
+			<locationURI>PARENT-1-PROJECT_LOC/parsing</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

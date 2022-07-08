@@ -1,0 +1,18 @@
+# EditorConfig is awesome: https://EditorConfig.org
+#
+# html, css config
+
+# top-most EditorConfig file
+
+# ext type settings
+
+### setting
+
+# html, css
+
+[**.{html, css}]
+indent_style = tab
+indent_size = 2
+tab_width = 2
+
+

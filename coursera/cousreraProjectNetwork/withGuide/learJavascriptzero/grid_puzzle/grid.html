@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="grid.css">
+        <script src="acorn_interpreter.js"></script>
+        <script src="blockly_uncompressed.js"></script>
+        <script src="blocks_compressed.js"></script>
+        <script src="javascript_compressed.js"></script>
+        <script src="msg/js/en.js"></script>
+    </head>
+    <body>
+        <div style="width: 1200px;">
+            <button id="runButton">Run</button>&nbsp;
+            <button id="reloadButton">Reload Page</button>
+            <div id="gridContainer"></div>
+            <div id="blocklyDiv" style="height: 480px; width: 700px;"></div>
+            <xml id="toolbox" style="display: none">
+                <category name="Move">
+                    <block type="move_left"></block>
+                    <block type="move_right"></block>
+                    <block type="move_up"></block>
+                    <block type="move_down"></block>
+                </category>
+                <category name="Loop">
+                    <block type="controls_for"></block>
+                </category>
+				<category name="If">
+                    <block type="controls_if"></block>
+                </category>
+                <category name="Comparison">
+                    <block type="logic_compare"></block>
+                  </category>
+                <category name="Variables" custom="VARIABLE">
+                </category>
+                <category name="Numbers">
+                    <block type="math_number"></block>
+                </category>
+              </xml>
+            <script src="grid.js"></script>
+            <script src="grid_bts.js"></script>    
+        </div>
+    </body>
+</html>
