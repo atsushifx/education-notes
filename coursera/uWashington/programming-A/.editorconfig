@@ -1,0 +1,10 @@
+# EditorConfig is awesome: https://EditorConfig.org
+#
+# EditorConfig for coursera programming A
+
+# standard ml
+[**.sml]
+indent_style = tab
+indent_size = tab
+tab_width = 4
+
