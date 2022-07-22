@@ -1,5 +1,5 @@
 {
-	"workbench.colorTheme": "Iceberg Light",
+	"workbench.colorTheme": "Darcula Extended",
 	"editor.cursorStyle": "block",
 	"textlinmarkdown.extension.preview.autoShowPreviewToSide": true,
 	"markdown.extension.print.absoluteImgPath": false,
