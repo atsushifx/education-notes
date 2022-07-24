@@ -1,0 +1,15 @@
+# EditorConfig is awesome: https://EditorConfig.org
+#
+# default editorconfig set ~/ to symlink
+
+# top-most EditorConfig file
+##
+
+# language settings
+
+# ruby
+[*.sml]
+indent_style = tab
+indent_size = tab
+tab_wdth = 4
+
