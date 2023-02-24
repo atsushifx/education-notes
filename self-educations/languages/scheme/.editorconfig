@@ -1,0 +1,12 @@
+# EditorConfig is awesome: https://EditorConfig.org
+#
+#
+#
+##
+# root = true
+
+# javascript/typescript
+[*.{rkt, scm}]
+tab_width = 2
+indent_size = 2
+indent_style = space
