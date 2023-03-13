@@ -4,5 +4,6 @@
 		"racket": "racket",
 		"scheme": "racket",
 	},
-	"magicRacket.general.racketPath": "racket"
+	"magicRacket.general.racketPath": "racket",
+	"code-runner.fileDirectoryAsCwd": true
 }
