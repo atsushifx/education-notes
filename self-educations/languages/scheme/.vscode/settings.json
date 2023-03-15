@@ -5,5 +5,10 @@
 		"scheme": "racket",
 	},
 	"magicRacket.general.racketPath": "racket",
-	"code-runner.fileDirectoryAsCwd": true
+	"code-runner.fileDirectoryAsCwd": true,
+	"magicRacket.languageServer.arguments": [
+		"--lib",
+		"racket-langserver",
+		"racket-langserver"
+	]
 }
