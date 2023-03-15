@@ -6,6 +6,7 @@
 
 (display "rakcet calculation sample program\n\n")
 
+(display "\n -- 演算子 --\n")
 ;; add
 (+ 1 2) ; = 3
 
@@ -24,32 +25,27 @@
 ;; n乗
 (expt 2 3) ; = 8 (= 2 ^3: 2*2*2)
 
-
 ;; -
 (- -3)
 
 ;; 論理演算
-(display "\n -- logic calc --\n\n")
+(display "\n -- 比較演算 --\n")
 
-(= 1 2)  ; false
-(> 1 2)  ; false
-(< 1 2)  ; true
-(>= 3 3)  ; true
-(<= 4 3)   ; false
+(= 1 2) ; false
+(> 1 2) ; false
+(< 1 2) ; true
+(>= 3 3) ; true
+(<= 4 3) ; false
 
 ;;
-(display "\n論理演算子\n")
+(display "\n -- 論理演算子 --\n")
 (not #f)
 (and #t #t #t)
 (or #f #f #f)
 (xor #t #f)
 (xor #f #f)
 
-
-
 ;; 複雑な計算
+(display "\n -- complex calc --\n")
 (+ 1 (* 2 (- 3 (/ 4 5)))) ; 27/5 .. 分数がかえる
 (+ 1/3 1/4)
-
-
-

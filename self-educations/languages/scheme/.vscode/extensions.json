@@ -2,8 +2,6 @@
   "recommendations": [
     "formulahendry.code-runner",
     "evzen-wybitul.magic-racket",
-    "karyfoundation.racket",
-    "lishizhen.racket-fmt",
-    // "tabnine.tabnine-vscode"
+    "lishizhen.racket-fmt"
   ]
 }
