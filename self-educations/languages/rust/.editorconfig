@@ -1,0 +1,38 @@
+## EditorConfig is awesome: https://EditorConfig.org
+#
+# @(#)  default editorconfig settings for user
+#
+# @version  1.0.0
+# @date		2023-12-24
+# @author	Furukawa Atsushi <atsushifx@aglabo.com>
+# @license  MIT
+#
+# @description <<
+# editorconfig for rust programming language
+# root = false: root of education note
+#
+#<<
+
+# top-most EditorConfig file
+root = false
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+max_ling_length=120
+
+# default character-set
+charset = utf-8
+
+# indent style
+indent_size = tab
+indent_style = tab
+tab_width=4
+
+
+## rust setting
+[*.rs]
+indent_style = space
+indent_size = 4
+tab_width=4
