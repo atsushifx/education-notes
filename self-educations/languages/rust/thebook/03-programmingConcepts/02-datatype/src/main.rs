@@ -1,19 +1,27 @@
 /**
  * データ型についてまとめた
+ *
  */
+
 fn main() {
     println!("\nデータ型");
-    datatype1();
+    datatype_basic();
 
     println!("\n数値リテラル");
     number_literal();
 
     println!("\n数値演算");
     datatype_calc();
+
+    println!("\n論理値");
+    datatype_boolean();
+
+    println!("\n文字型");
+    datatype_char();
 }
 
 // データ型定義必須
-fn datatype1() {
+fn datatype_basic() {
     let x: u32; // 型定義は必須
     x = "42".parse().expect("not num"); // letで宣言しているだけなので代入可能
     println!("x={}", x);
@@ -51,4 +59,35 @@ fn datatype_calc() {
 
     let sur = 5.5 % 2 as f32; // 整数と実数の演算はできない -> as で型キャスト
     println!("剰余 (整数): 5.5 % 2 = {}", sur);
+}
+
+// boolean
+fn datatype_boolean() {
+    let t = true;
+    let f = false;
+
+    println!("Yes = {}", t);
+    println!("No = {}", f);
+    // 比較演算子
+    println!("比較(=): 4 = 4 → {}", 4 == 4);
+    println!("比較(≠): 4 ≠ 5 → {}", 4 != 5);
+    println!("比較(<): 4 < 5 = {}", 4 < 5);
+    println!("比較(≦): 5 ≦ 5 = {}", 5 <= 5);
+    println!("比較(>): 4 > 5 = {}", 4 > 5);
+    println!("比較(≧): 5 ≧ 5 = {}", 5 >= 5);
+
+    // 論理演算
+    println!("and: {}", true && true && true);
+    println!("or: {}", false || false || true || false);
+    println!("not: {}, {}", !true, !false);
+    println!("xor: {}", false ^ true ^ true);
+}
+
+// 文字型
+fn datatype_char() {
+    let ch = '@';
+    println!("Char: {} = {:x}", ch, ch as u32);
+
+    let ch = '☁';
+    println!("Char: {} = {:X}", ch, ch as u32);
 }
