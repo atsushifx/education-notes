@@ -1,3 +1,3 @@
 #lang racket
 
-(display '("Hello," "my first racket!"))
+"Hello, World"
