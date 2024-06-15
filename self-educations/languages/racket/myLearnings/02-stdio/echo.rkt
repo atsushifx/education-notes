@@ -2,14 +2,15 @@
 
 (define (echo-input)
   (display "input: ")
-  (let ([input (read-line)])
+  (let ([input (read)])
     (display "value: ")
-    (displayln input)
+    (print input)
+    (newline)
     input))
 
 (define (echo-until-eof)
   (let ([input (echo-input)])
-    (unless (eof-object? input)
+    (unless (eqv? input eof)
       (echo-until-eof))))
 
 
