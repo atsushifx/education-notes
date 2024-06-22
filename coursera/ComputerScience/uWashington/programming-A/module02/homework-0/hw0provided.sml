@@ -1,4 +1,4 @@
-](* Dan Grossman, Coursera PL, HW0 Provided Code *)
+(* Dan Grossman, Coursera PL, HW0 Provided Code *)
 
 (* The line below is wrong -- replacing the addition, +, with
 multiplication, *, will fix it *)
