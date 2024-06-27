@@ -34,19 +34,36 @@ fun number_in_month(dates:(int*int*int) list, month:int) =
 	;
 
 
-(* *3. : add month number from list *)
+(* 3. : add month number from list *)
 fun number_in_months(dates:(int*int*int) list, months:int list) =
     if (null months) then
         0
     else
         number_in_month(dates, hd months) + number_in_months(dates, tl months)
-
 	;
 
 
+(* 4. : create date list from parameter date list where month = parameter *)
+fun dates_in_month(dates:(int*int*int) list, month: int) =
+	if (null dates) then
+        []
+    else
+		let
+			val h_month = #2 (hd dates)
+		in
+			if h_month = month then
+				(hd dates)::dates_in_month(tl dates, month)
+			else
+				dates_in_month(tl dates, month)
+		end
+	;
+
 
 (* exec test *)
+[is_older ((1,2,3),(2,3,4)), true];
 [number_in_month ([(2012,2,28),(2013,12,1)],2) , 1];
 [number_in_months ([(2012,2,28),(2013,12,1),(2011,3,31),(2011,4,28)],[2,3,4]),  3];
+dates_in_month ([(2012,2,28),(2013,12,1)],2);
+
 
 
