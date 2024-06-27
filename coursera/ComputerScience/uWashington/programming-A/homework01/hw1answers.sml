@@ -34,11 +34,19 @@ fun number_in_month(dates:(int*int*int) list, month:int) =
 	;
 
 
+(* *3. : add month number from list *)
+fun number_in_months(dates:(int*int*int) list, months:int list) =
+    if (null months) then
+        0
+    else
+        number_in_month(dates, hd months) + number_in_months(dates, tl months)
 
+	;
 
 
 
 (* exec test *)
-number_in_month ([(2012,2,28),(2013,12,1)],2) ;
+[number_in_month ([(2012,2,28),(2013,12,1)],2) , 1];
+[number_in_months ([(2012,2,28),(2013,12,1),(2011,3,31),(2011,4,28)],[2,3,4]),  3];
 
 
