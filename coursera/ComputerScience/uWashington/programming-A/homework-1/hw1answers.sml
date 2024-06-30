@@ -153,8 +153,6 @@ fun month_range(from: int, to: int) =
 
 (* 11. oldest :  *)
 
-	;
-
 fun oldest(daylist: (int*int*int) list) =
 	if (null daylist) then
 		NONE
@@ -177,6 +175,12 @@ fun oldest(daylist: (int*int*int) list) =
 			SOME (oldest_noempty(daylist))
 		end
 	;
+
+(* challenge probrem *)
+
+(* 11.: if same date is in the months : not count *)
+
+(* 12. : check date of parameter is "real date" *)
 
 (* exec test *)
 
