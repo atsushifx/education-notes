@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>module3-eqmap</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>data</name>
+			<type>2</type>
+			<location>C:/Users/atsushifx/workspaces/education/education-notes/coursera/ucSanDiego/OOPinJava/data</location>
+		</link>
+		<link>
+			<name>libs</name>
+			<type>2</type>
+			<location>C:/Users/atsushifx/workspaces/education/education-notes/coursera/ucSanDiego/OOPinJava/libs</location>
+		</link>
+		<link>
+			<name>parsing</name>
+			<type>2</type>
+			<location>C:/Users/atsushifx/workspaces/education/education-notes/coursera/ucSanDiego/OOPinJava/parsing</location>
+		</link>
+	</linkedResources>
+</projectDescription>

@@ -1,0 +1,4 @@
+[submodule "self-educations"]
+	path = self-educations
+	url = https://github.com/atsushifx/self-educations.git
+	branch = main

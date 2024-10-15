@@ -1,0 +1,19 @@
+{
+    "name": "font-preview-challenge",
+    "version": "1.0.0",
+    "description": "Solution for the Font Preview practice challenge",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "html-validator": "^5.1.17",
+        "jest": "^26.6.3",
+        "jsdom": "^16.5.0"
+    },
+    "dependencies": {
+        "standards": "^0.1.0"
+    }
+}

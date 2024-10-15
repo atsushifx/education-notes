@@ -1,0 +1,23 @@
+{
+  "name": "education-notes",
+  "version": "0.1.0",
+  "description": "online education notes for cousera, edx, ...",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atsushifx/education-notes.git"
+  },
+  "author": "Furukawa, Atsushi <atsushifx@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atsushifx/education-notes/issues"
+  },
+  "homepage": "https://github.com/atsushifx/education-notes#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}

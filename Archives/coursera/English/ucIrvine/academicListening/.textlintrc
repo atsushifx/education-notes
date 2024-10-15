@@ -1,0 +1,37 @@
+{
+  "filters": {
+    "allowlist": [
+      "textlint/allowlist.yml"
+    ]
+  },
+  "rules": {
+    "ginger": {
+      "skipPatterns": [
+        "Atsushi",
+        "Furukawa"
+      ]
+    },
+    "write-good": {
+      "passive": true,
+      "thereIs": true,
+      "adverb": true
+    },
+    "common-misspellings": {},
+    "spelling": {
+      "language": "en",
+      "skipPatterns": [
+        "Atsushi",
+        "Furukawa"
+      ],
+      "suggestCorrections": true
+    },
+    "terminology": {
+      "defaultTerms": true
+    },
+    "@proofdict/proofdict": {
+      "dictURL": "https://atsushifx.github.io/proof-dictionary/"
+    },
+    "@textlint-rule/no-unmatched-pair": true,
+    "no-mixed-zenkaku-and-hankaku-alphabet": true
+  }
+}

@@ -1,0 +1,10 @@
+[core]
+	autocrlf = input
+##	editor = "code --wait "
+
+[color]
+	ui = true
+
+[push]
+	default = current
+

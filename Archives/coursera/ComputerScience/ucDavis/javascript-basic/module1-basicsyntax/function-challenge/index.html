@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js: Function challenge</title>
+</head>
+<body>
+<h1>Function challenge <sub>(10 - 16</sub></h1>
+
+<h2>Challenge 10</h2><h2>Challenge 10</h2>
+<script>
+  function hello() {
+    console.log("Hello, and welcome.");
+  }
+ //  hello();
+</script>  
+
+<h2>Challenge 11. : hello with param</h2>
+<script>
+  function helloTo(name) {
+    console.log(`Hello ${name}, and welcome.`);
+  }
+
+  // helloTo('敦史');
+</script>  
+
+<h2>Challenge 12. : prompt</h2>
+<script>
+  /*
+  let yourName = prompt("Your name?: ", "John");
+  helloTo(yourName);
+  */
+</script>  
+
+<h2>Challenge 13. : prompt cancel</h2>
+<script>
+  function helloTo2(name) {
+    if (name===null || name==="") {
+      console.log("You didn't give me your name");
+    } else {
+      console.log(`Hello ${name}, and welcome.`);
+    }
+  }
+
+  // helloTo2(prompt("Your name?: "));
+</script>  
+
+<h2>Challenge 14. : returning value</h2>
+<script>
+  function hello2(name) {
+    let greeting = `Hello ${name}, and welcome.`;
+    return greeting;
+  }
+  // console.log(hello2());
+
+</script>
+
+<h2>Challenge 15. : gifts</h2>
+<script>
+  function hospitallity(name, gifts) {
+    console.log(hello2(name));
+    for (g of gifts) {
+      let giftmes = `${name}, would you like some ${g}?`;
+      console.log(giftmes);
+    }
+  }
+  const foods = ["ハンバーガー", "ポテト", "コーラ", "チキン"];
+
+  // hospitallity("anne", foods);
+
+</script>
+
+<h2>Challenge 16. : </h2>
+<script>
+  function hospitallity2(name, gifts) {
+    console.log(hello2(name));
+
+    let i = Math.floor(Math.random() * gifts.length);
+    let giftmes = `${name}, would you like some ${gifts[i]}?`;
+    console.log(giftmes);
+  }
+  const desserts = ["アップルパイ", "カントリーマァム", "チョコミントアイス", "ポッキー", "きのこの山"]
+  hospitallity2("月ノ美兎", desserts);
+</script>
+
+</body>
+</html>

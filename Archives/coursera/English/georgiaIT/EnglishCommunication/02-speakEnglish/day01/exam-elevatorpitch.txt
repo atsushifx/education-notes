@@ -1,0 +1,10 @@
+Hello, nice to meet you. My name is Atsushi Furukawa.
+My job is a programmer.
+Now, I am learning a new programming language typescript and make small product with them.
+This is a simple file selector in console.
+
+If you are interested about this, please Email me.
+Here is my contact info.
+
+I'll grad to see you later, bye.
+

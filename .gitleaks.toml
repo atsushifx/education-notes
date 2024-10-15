@@ -1,0 +1,21 @@
+##  @(#) : gitleaks settings
+##
+##
+#
+# @version  1.0.0
+# @author   Furukawa, Atsushi <atsushifx@aglabo.com>
+# @update   2024-10-15
+# @license  MIT
+#
+# @desc<<
+# gitleaks ignore files settings
+#
+#<<
+
+title = "gitleaks config"
+
+[[rules]]
+id = 1
+description = "exclude dna data files"
+regex = '''.*/.*dnapart.*'''
+
